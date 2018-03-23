@@ -9,7 +9,7 @@
 			<h1>Tim Hallerhed Website</h1>
 		</header>
 		<main>
-
+			<p>Detta är Startsidan</p>
 		</main>
 		<footer>
 		<p> &copy; Jelena Medjed, <?php echo date("Y"); ?>
