@@ -12,7 +12,7 @@
 
 		</main>
 		<footer>
-		<p> &copy; Tim Hallerhed, <?php echo date("Y"); ?>
+		<p> &copy; Jelena, <?php echo date("Y"); ?>
 		</footer>
 	</body>
 </html>
