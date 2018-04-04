@@ -15,7 +15,7 @@ session_name('HFAB');
 session_start();
 session_regenerate_id();
 
-$mysqli = new mysqli(’localhost’,’root’,’root,’hfab’);
+$mysqli = new mysqli('localhost','root','root','hfab');
 $navigation = <<<END
 <nav>
 	<a href="index.php">Home</a>
