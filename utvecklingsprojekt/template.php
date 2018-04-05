@@ -21,6 +21,7 @@ $navigation = <<<END
 	<a href="index.php">Home</a>
 	<a href="about.php">About</a>
 	<a href="register.php">Registrera dig</a>
+	<a href="add_article.php">Lägg till artikel</a>
 END;
 
 if(isset($_SESSION['userId']))
