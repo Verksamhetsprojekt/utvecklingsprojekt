@@ -9,9 +9,7 @@ if(isset($_POST['benamning']))
 END;
 $mysqli->query($query);
 echo 'Artikel har lagts till';
-} else {
-	echo "Något gick fel";
-}
+} 
 
 $content = <<<END
 <form method="post" action="add_article.php">
