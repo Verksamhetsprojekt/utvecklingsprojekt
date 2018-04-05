@@ -9,6 +9,8 @@ if(isset($_POST['name']))
 END;
 $mysqli->query($query);
 echo 'Artikel har lagts till';
+} else {
+	echo "Något gick fel";
 }
 
 $content = <<<END
