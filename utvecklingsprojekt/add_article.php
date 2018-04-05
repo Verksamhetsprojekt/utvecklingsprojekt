@@ -14,7 +14,7 @@ echo 'Artikel har lagts till';
 }
 
 $content = <<<END
-<form methos="post" action="add_article.php">
+<form method="post" action="add_article.php">
 <input type="text" name="benamning" placeholder="Benämning">
 <input type="text" name="utpris prislista a" placeholder="Pris">
 <input type="text" name="lagerplats" placeholder="Lagerplats">
