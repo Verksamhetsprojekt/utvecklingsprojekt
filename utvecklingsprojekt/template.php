@@ -38,6 +38,7 @@ $navigation = <<<END
 	<a href="register.php">Registrera dig</a>
 	<a href="add_article.php">Lägg till artikel</a>
 	<a href="articles.php">Artiklar</a>
+	<a href="article_details.php">Artikeldetaljer</a>
 END;
 
 if(isset($_SESSION['userId']))
