@@ -14,6 +14,7 @@ if($res->num_rows > 0)
 		$content .= <<<END
 		{$row->benamning}<br>
 		{$row->utpris_prislista_a}
+		<a href="article_details.php?id={$row->id}">Läs mer</a><br>
 		<hr>
 END;
 	}
