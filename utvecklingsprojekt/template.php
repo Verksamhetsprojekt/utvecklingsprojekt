@@ -15,7 +15,22 @@ session_name('HFAB');
 session_start();
 session_regenerate_id();
 
-$mysqli = new mysqli('localhost','root','root','hfab');
+new mysqli('localhost', 'root', 'root', 'hfab');
+/*$servername = "ideweb2.hh.se";
+$username = "timhal16";
+$password = "l_CjusJpUi";
+$database = "timhal16_db"
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
+*/
 $navigation = <<<END
 <nav>
 	<a href="index.php">Home</a>
