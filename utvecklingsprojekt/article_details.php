@@ -1,6 +1,6 @@
 <?php
 include('template.php');
-$content = '';
+$content = ' ';
 if(isset($_GET['artikelnr']))
 {
 	$query = <<<END 
