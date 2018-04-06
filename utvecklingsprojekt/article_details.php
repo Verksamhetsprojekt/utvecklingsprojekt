@@ -1,6 +1,6 @@
 <?php
 include('template.php');
-$content = ' ';
+$content = '';
 if(isset($_GET['artikelnr']))
 {
 	$query = <<<END 
@@ -21,6 +21,7 @@ if($res->num_rows > 0)
 END;
 }
 }
+
 echo $navigation;
 echo $content;
 ?>
