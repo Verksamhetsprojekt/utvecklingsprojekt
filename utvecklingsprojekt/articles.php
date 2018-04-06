@@ -15,7 +15,7 @@ if($res->num_rows > 0)
 		{$row->benamning}<br>
 		{$row->utpris_prislista_a}
 		<a href="article_details.php?artikelnr={$row->artikelnr}">Läs mer</a><br>
-		<a href="delete.php?id={$row->artikelnr}" onclick="return
+		<a href="delete.php?artikelnr={$row->artikelnr}" onclick="return
 		confirm('Är du säker?')">Ta bort artikel</a><br>
 		<a href="edit_article.php?artikelnr={$row->artikelnr}">Redigera artikel</a><br>
 		<hr>
