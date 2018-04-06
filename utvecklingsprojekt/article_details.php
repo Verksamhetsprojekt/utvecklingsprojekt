@@ -8,7 +8,7 @@ if(isset($_GET['artikelnr']))
 	WHERE artikelnr = '{$_GET['artikelnr']}'
 END;
 
-$res = $mysqli->query($query) or die ($mysqli->error);
+$res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
