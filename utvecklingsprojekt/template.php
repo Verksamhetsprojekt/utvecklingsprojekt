@@ -37,7 +37,6 @@ $navigation = <<<END
 	<a href="index.php">Home</a>
 	<a href="about.php">About</a>
 	<a href="articles.php">Artiklar</a>
-	<a href="delete.php">Ta bort</a>
 END;
 
 if(isset($_SESSION['userId']))
