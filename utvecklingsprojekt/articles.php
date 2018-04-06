@@ -14,10 +14,10 @@ if($res->num_rows > 0)
 		$content .= <<<END
 		{$row->benamning}<br>
 		{$row->utpris_prislista_a}
-		<a href="article_details.php?artikelnr={$row->artikelnr}">Läs mer</a><br>
-		<a href="delete.php?artikelnr={$row->artikelnr}" onclick="return
+		<a href="article_details.php?id={$row->id}">Läs mer</a><br>
+		<a href="delete.php?id={$row->id}" onclick="return
 		confirm('Är du säker?')">Ta bort artikel</a><br>
-		<a href="edit_article.php?artikelnr={$row->artikelnr}">Redigera artikel</a><br>
+		<a href="edit_article.php?id={$row->id}">Redigera artikel</a><br>
 		<hr>
 END;
 	}

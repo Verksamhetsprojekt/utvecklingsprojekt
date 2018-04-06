@@ -1,10 +1,10 @@
 <?php
 include('template.php');
-if(isset($_REQUEST['artikelnr']))
+if(isset($_GET['id']))
 {
 	$query = <<<END 
 	DELETE FROM artikel
-	WHERE artikelnr = '{$_REQUEST['artikelnr']}'
+	WHERE id = '{$_GET['id']}'
 END;
 $mysqli->query($query);
 header('Location:articles.php');
