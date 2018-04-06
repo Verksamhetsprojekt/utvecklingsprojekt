@@ -15,7 +15,7 @@ session_name('HFAB');
 session_start();
 session_regenerate_id();
 
-new mysqli('localhost', 'root', 'root', 'hfab');
+$mysqli = new mysqli("localhost", "root", "root", "hfab");
 /*$servername = "ideweb2.hh.se";
 $username = "timhal16";
 $password = "l_CjusJpUi";
