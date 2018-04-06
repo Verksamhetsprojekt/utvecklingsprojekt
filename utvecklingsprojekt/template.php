@@ -31,6 +31,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 ?>
 */
+
 $navigation = <<<END
 <nav>
 	<a href="index.php">Home</a>
