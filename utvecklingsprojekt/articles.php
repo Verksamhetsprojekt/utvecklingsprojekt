@@ -20,7 +20,6 @@ END;
 	}
 }
 
-echo "Test";
 echo $navigation;
 echo $content;
 ?>
