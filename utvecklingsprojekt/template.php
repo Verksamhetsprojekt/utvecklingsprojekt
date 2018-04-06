@@ -35,24 +35,23 @@ $navigation = <<<END
 <nav>
 	<a href="index.php">Home</a>
 	<a href="about.php">About</a>
-	<a href="register.php">Registrera dig</a>
-	<a href="add_article.php">Lägg till artikel</a>
 	<a href="articles.php">Artiklar</a>
-	<a href="article_details.php">Artikeldetaljer</a>
 END;
 
 if(isset($_SESSION['userId']))
 {
-	$navigation .= <<<END
-	<a href="logout.php">Logout</a>
-Inloggad som {$_SESSION['username']}
-END;
+	$navigation .= ' <a href="add_article.php">Lägg till artikel</a>';
+	$navigation .= ' <a href="logout.php">Logga ut</a>';
+	$navigation .= ' Inloggad som ' . $_SESSION['username'];
 }
 else
 {
 	$navigation .= ' <a href="login.php">Logga in</a>';
+	$navigation .= ' <a href="register.php">Registrera dig</a>';
 }
-$navigation .= '</nav>';
+$navigation .= <<<END 
+</nav> 
+END;
 ?>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
