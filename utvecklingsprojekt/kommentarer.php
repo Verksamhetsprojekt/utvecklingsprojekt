@@ -4,3 +4,5 @@
 
 // Ovanstånde är fixat
 
+//filen "test.php" visar att databasanslutningen fungerar och att man kan hämta ut värden och echo ut dem från "artikel" - tabellen i "hfab" - databasen. Det bevisar att det är $_GET metoden som krånglar, trots att vi har identisk kod med philips pdf.
+
