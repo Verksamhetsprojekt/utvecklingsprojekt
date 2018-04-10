@@ -46,24 +46,17 @@ END;
 if(isset($_SESSION['userId']))
 {
 	$navigation .= '<a href="add_article.php">Lägg till artikel</a>';
-	$navigation .= '<a href="logout.php">Logga ut</a>';
 	$navigation .= '<a href="register.php">Registrera ny användare</a>';
+	$navigation .= '<a href="logout.php">Logga ut</a>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else
 {
-	$navigation .= '<a href="login.php">
-	<html>
-<head></head>
-<title>Static Dropdown List</title>
-<body bgcolor="pink">
+	$navigation .= ' Logga in:<a href="login.php"> 
 <select>
-<option value="Logga in">Logga in</option>}
-<option value="Personal">Personal</option>
-<option value="Leverantör">Leverantör</option>
+<option value="Personal">som Personal</option>
+<option value="Leverantör">som Leverantör</option>
 </select>
-</body>
-<html>
 </a>';
 
 }
