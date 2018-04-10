@@ -52,7 +52,20 @@ if(isset($_SESSION['userId']))
 }
 else
 {
-	$navigation .= '<a href="login.php">Logga in</a>';
+	$navigation .= '<a href="login.php">
+	<html>
+<head></head>
+<title>Static Dropdown List</title>
+<body bgcolor="pink">
+<select>
+<option value="Logga in">Logga in</option>}
+<option value="Personal">Personal</option>
+<option value="Leverantör">Leverantör</option>
+</select>
+</body>
+<html>
+</a>';
+
 }
 $navigation .= <<<END
 </nav>
