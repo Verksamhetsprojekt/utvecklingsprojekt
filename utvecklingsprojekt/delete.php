@@ -10,4 +10,5 @@ $mysqli->query($query);
 header('Location:articles.php');
 }
 echo $navigation;
+echo $footer;
 ?>

@@ -1,6 +1,7 @@
 <?php
 include('template.php');
-$content = ' ';
+
+
 if(isset($_GET['artikelnr']))
 {
 	$query = <<<END 
@@ -12,7 +13,7 @@ $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
-	$content = <<<END 
+	$content .= <<<END 
 	<form method="get" action="article_details.php">
 	Artikelnr: {$row->artikelnr}<br>
 	Benämning: {$row->benamning}<br>
@@ -21,9 +22,10 @@ if($res->num_rows > 0)
 	Datum: {$row->created_at}
 	</form>
 END;
-//}
+}
 }
 
 echo $navigation;
 echo $content;
+echo $footer;
 ?>
