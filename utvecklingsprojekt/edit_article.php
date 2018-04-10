@@ -37,4 +37,5 @@ END;
 
 echo $navigation;
 echo $content;
+echo $footer;
 ?>
