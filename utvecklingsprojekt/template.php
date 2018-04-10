@@ -61,11 +61,6 @@ END;
 
 if(isset($_SESSION['userId']))
 {
-<<<<<<< HEAD
-	$navigation .= '<a href="add_article.php">Lägg till artikel</a>';
-	$navigation .= '<a href="register.php">Registrera ny användare</a>';
-	$navigation .= '<a href="logout.php">Logga ut</a>';
-=======
 	$navigation .= '
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -81,7 +76,6 @@ if(isset($_SESSION['userId']))
     <li class="nav-item">
       <a class="nav-link" href="register.php">Registrera ny användare</a>
     </li></ul>';
->>>>>>> bac3b45563376c37b84584bbf5f7b3a1cced6e10
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else
