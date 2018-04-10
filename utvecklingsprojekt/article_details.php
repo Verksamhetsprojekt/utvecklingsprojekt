@@ -21,7 +21,7 @@ if($res->num_rows > 0)
 	Datum: {$row->created_at}
 	</form>
 END;
-}
+//}
 }
 
 echo $navigation;
