@@ -13,11 +13,13 @@ if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
 	$content = <<<END 
+	<form method="get" action="article_details.php">
 	Artikelnr: {$row->artikelnr}<br>
 	Benämning: {$row->benamning}<br>
 	Pris: {$row->utpris_prislista_a}<br>
 	Lagerplats: {$row->lagerplats}<br>
 	Datum: {$row->created_at}
+	</form>
 END;
 }
 }
