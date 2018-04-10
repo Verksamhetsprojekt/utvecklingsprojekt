@@ -17,7 +17,7 @@ $content = <<<END
 <input type="text" name="email" placeholder="E-post">
 <input type="text" name="fname" placeholder="Förnamn">
 <input type="text" name="lname" placeholder="Efternamn">
-<input type="submit" Value="Registrera dig">
+<input type="submit" Value="Registrera">
 </form>
 END;
 echo $navigation;

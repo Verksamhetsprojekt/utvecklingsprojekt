@@ -43,12 +43,12 @@ if(isset($_SESSION['userId']))
 {
 	$navigation .= '<a href="add_article.php">Lägg till artikel</a>';
 	$navigation .= '<a href="logout.php">Logga ut</a>';
+	$navigation .= '<a href="register.php">Registrera ny användare</a>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else
 {
 	$navigation .= '<a href="login.php">Logga in</a>';
-	$navigation .= '<a href="register.php">Registrera dig</a>';
 }
 $navigation .= <<<END
 </nav>
