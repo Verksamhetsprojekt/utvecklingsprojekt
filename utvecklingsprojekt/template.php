@@ -80,12 +80,15 @@ if(isset($_SESSION['userId']))
 }
 else
 {
-	$navigation .= ' Logga in:<a href="login.php"> 
-<select>
-<option value="Personal">som Personal</option>
-<option value="Leverantör">som Leverantör</option>
-</select>
-</a>';
+	$navigation .= '<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Logga in
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="login.php"">Logga in som leverantör</a>
+        <a class="dropdown-item" href="login.php"">Logga in som personal</a>
+        </div>
+    </li>';
 
 }
 $navigation .= <<<END
