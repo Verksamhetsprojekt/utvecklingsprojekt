@@ -8,11 +8,17 @@
 
 		<title>HFAB</title>
 	</head>
+	<div class="row">
 	<header>
+		<div class="col">
 		<h1>Välkommen till Hellströms Fordonsteknik AB</h1>
 		<h6><i>Din specialistpartner sedan 1967</i></h6><hr>
+	</div>
 	</header>
 	<body>
+		 <div class="col">
+ 
+
 <?php
 
 session_name('HFAB');
@@ -37,17 +43,39 @@ echo "Connected successfully";
 */
 
 $navigation = <<<END
-<nav>
-	<a href="index.php">Home</a>
-	<a href="about.php">About</a>
-	<a href="articles.php">Artiklar</a>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="index.php">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about.php">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="articles.php">Artiklar</a>
+    </li>
+  </ul>
+
+
 END;
 
 if(isset($_SESSION['userId']))
 {
-	$navigation .= '<a href="add_article.php">Lägg till artikel</a>';
-	$navigation .= '<a href="logout.php">Logga ut</a>';
-	$navigation .= '<a href="register.php">Registrera ny användare</a>';
+	$navigation .= '
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="add_article.php">Lägg till artikel</a>
+    </li></ul>';
+	$navigation .= '
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logga ut</a>
+    </li></ul>';
+	$navigation .= '
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="register.php">Registrera ny användare</a>
+    </li></ul>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else
@@ -76,11 +104,14 @@ END;
 ?>
 
 	</body>
+</div>
+
 	<footer>
+		 <div class="col">
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    </div>
 	</footer>
-
+</div>
 </html>
