@@ -8,8 +8,13 @@ if(isset($_POST['username'])&&isset($_SESSION['userId']))
 	'{$_POST['fname']}', '{$_POST['lname']}')
 END;
 $mysqli->query($query);
+<<<<<<< HEAD
 header('Location:index.php');
 
+=======
+echo '<span style="color:Green">En ny användare har lagts till</span>';
+}
+>>>>>>> f56872792e36a5fba7d9f5de21885ed8e66579a3
 $content = <<<END
 <form method="post" action="register.php">
 <input type="text" name="username" placeholder="Användarnamn">
