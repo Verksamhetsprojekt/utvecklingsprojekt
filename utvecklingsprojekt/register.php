@@ -23,11 +23,6 @@ $content = <<<END
 </form>
 END;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e6a6c17516d3172acebd15d83adfc25547d2b561
 echo $navigation;
 echo $content;
 echo $footer;

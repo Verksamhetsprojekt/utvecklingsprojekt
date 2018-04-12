@@ -9,10 +9,7 @@ if(isset($_POST['levname'])&&isset($_SESSION['userId']))
 END;
 $mysqli->query($query);
 echo '<span style="color:Green">En ny användare har lagts till</span>';
-<<<<<<< HEAD
 }
-=======
->>>>>>> e6a6c17516d3172acebd15d83adfc25547d2b561
 
 $content = <<<END
 <form method="post" action="registerlev.php">
@@ -28,4 +25,4 @@ END;
 echo $navigation;
 echo $content;
 echo $footer;
-?>
+?>s
