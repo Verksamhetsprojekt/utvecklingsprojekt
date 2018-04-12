@@ -6,6 +6,7 @@ if(isset($_POST['username'])&&isset($_SESSION['userId']))
 	INSERT INTO users(username,password,email,fname,lname)
 	VALUES('{$_POST['username']}','{$_POST['password']}', '{$_POST['email']}',            
 	'{$_POST['fname']}', '{$_POST['lname']}')
+
 END;
 $mysqli->query($query);
 echo '<span style="color:Green">En ny användare har lagts till</span>';
@@ -22,6 +23,11 @@ $content = <<<END
 </form>
 END;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e6a6c17516d3172acebd15d83adfc25547d2b561
 echo $navigation;
 echo $content;
 echo $footer;
