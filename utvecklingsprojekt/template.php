@@ -76,8 +76,8 @@ if(isset($_SESSION['userId']))
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Registrera ny användare</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="register.php"">Registrera personal</a>
-        <a class="dropdown-item" href="registerlev.php"">Registrera leverantör</a>
+        <a class="dropdown-item" href="register.php">Registrera personal</a>
+        <a class="dropdown-item" href="registerlev.php">Registrera leverantör</a>
         </div>
     </li></ul>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
@@ -112,8 +112,8 @@ else
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Logga in</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="loginlev.php"">Logga in som leverantör</a>
-        <a class="dropdown-item" href="login.php"">Logga in som personal</a>
+        <a class="dropdown-item" href="loginlev.php">Logga in som leverantör</a>
+        <a class="dropdown-item" href="login.php">Logga in som personal</a>
         </div>
     </li></ul>';
 

@@ -11,11 +11,11 @@ $mysqli->query($query);
 header('Location:index.php');
 }
 $content = <<<END
-<form method="post" action="register.php">
+<form method="post" action="registerlev.php">
 <input type="text" name="levname" placeholder="Användarnamn">
 <input type="password" name="password" placeholder="Lösenord">
 <input type="text" name="email" placeholder="E-post">
-<input type="text" name="name" placeholder="Namn">>
+<input type="text" name="name" placeholder="Namn">
 <input type="submit" Value="Registrera">
 </form>
 END;
