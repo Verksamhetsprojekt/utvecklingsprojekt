@@ -8,7 +8,7 @@ if(isset($_POST['benamning']))
 	'{$_POST['lagerplats']}')
 END;
 $mysqli->query($query);
-echo 'Artikel har lagts till';
+echo '<span style="color:Green">Artikel har lagts till</span>';
 } 
 
 $content = <<<END
