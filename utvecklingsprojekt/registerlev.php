@@ -9,7 +9,7 @@ if(isset($_POST['levname'])&&isset($_SESSION['userId']))
 END;
 $mysqli->query($query);
 header('Location:index.php');
-}
+
 $content = <<<END
 <form method="post" action="registerlev.php">
 <input type="text" name="levname" placeholder="Användarnamn">
@@ -19,6 +19,11 @@ $content = <<<END
 <input type="submit" Value="Registrera">
 </form>
 END;
+}
+else
+	{  
+		echo '<span style="color:Red">Du har inte behörighet. Vänligen logga in.</span>'; 
+	}
 echo $navigation;
 echo $content;
 echo $footer;
