@@ -7,17 +7,17 @@ if(isset($_GET['artikelnr']))
 	{
 		$query = <<<END
 		UPDATE artikel
-		SET benamning = '{$_POST['benamning']}',
-		utpris_prislista_a = '{$_POST['utpris_prislista_a']}',
-		lagerplats = '{$_POST['lagerplats']}'
-		WHERE artikelnr = '{$_GET['artikelnr']}'
+		SET benamning = '{$_POST["benamning"]}',
+		utpris_prislista_a = '{$_POST["utpris_prislista_a"]}',
+		lagerplats = '{$_POST["lagerplats"]}'
+		WHERE artikelnr = '{$_GET["artikelnr"]}'
 END;
     $mysqli->query($query);
 	}
 	
 	$query = <<<END 
 	SELECT * FROM artikel
-	WHERE artikelnr = '{$_GET['artikelnr']}'
+	WHERE artikelnr = '{$_GET["artikelnr"]}'
 END;
 
 $res = $mysqli->query($query);
