@@ -15,7 +15,7 @@ END;
     $mysqli->query($query);
 	}
 	
-	$query = <<<END 
+	$query = <<<END
 	SELECT * FROM artikel
 	WHERE artikelnr = '{$_GET["artikelnr"]}'
 END;
