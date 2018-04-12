@@ -23,13 +23,13 @@
 
 session_name('HFAB');
 session_start();
+ob_start();
 session_regenerate_id();
 
 $mysqli = new mysqli("localhost", "root", "root", "hfab");
-/*$servername = "ideweb2.hh.se";
-$username = "timhal16";
+/*$username = "timhal16";
 $password = "l_CjusJpUi";
-$database = "timhal16_db"
+$database = "timhal16_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -41,6 +41,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 ?>
 */
+
 
 $navigation = <<<END
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -54,7 +55,7 @@ $navigation = <<<END
     <li class="nav-item">
       <a class="nav-link" href="articles.php">Artiklar</a>
     </li>
-  </ul>
+  
 
 
 END;
@@ -62,25 +63,25 @@ END;
 if(isset($_SESSION['userId']))
 {
 	$navigation .= '
-  <ul class="navbar-nav">
+  
     <li class="nav-item">
       <a class="nav-link" href="add_article.php">Lägg till artikel</a>
-    </li></ul>';
+    </li>';
 	$navigation .= '
-  <ul class="navbar-nav">
+  
     <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
-    </li></ul>';
+    </li>';
 	$navigation .= '
-  <ul class="navbar-nav">
+
     <li class="nav-item">
       <a class="nav-link" href="register.php">Registrera ny användare</a>
-    </li></ul>';
+    </li>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else
 {
-	$navigation .= '<ul class="navbar-nav"><li class="nav-item dropdown">
+	$navigation .= '<li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Logga in</a>
       <div class="dropdown-menu">

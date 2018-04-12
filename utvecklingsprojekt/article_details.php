@@ -4,16 +4,16 @@ include('template.php');
 
 if(isset($_GET['artikelnr']))
 {
-	$query = <<<END 
+	$query = <<<END
 	SELECT * FROM artikel
-	WHERE artikelnr = '{$_GET['artikelnr']}'
+	WHERE artikelnr = '{$_GET["artikelnr"]}'
 END;
 
 $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
-	$content .= <<<END 
+	$content .= <<<END
 	<form method="get" action="article_details.php">
 	Artikelnr: {$row->artikelnr}<br>
 	Benämning: {$row->benamning}<br>
