@@ -1,6 +1,6 @@
 <?php
 include('template.php');
-if(isset($_POST['benamning']))
+if(isset($_POST['benamning'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
 	INSERT INTO artikel(benamning,utpris_prislista_a,lagerplats)

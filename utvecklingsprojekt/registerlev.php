@@ -1,6 +1,6 @@
 <?php
 include('template.php');
-if(isset($_POST['levname']))
+if(isset($_POST['levname'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
 	INSERT INTO userslev(levname,password,email,name)

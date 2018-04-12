@@ -1,7 +1,7 @@
 <?php
 include('template.php');
 $content = ' ';
-if(isset($_GET['artikelnr']))
+if(isset($_GET['artikelnr'])&&isset($_SESSION['userId']))
 {
 	if(isset($_POST['benamning']))
 	{

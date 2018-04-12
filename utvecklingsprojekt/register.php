@@ -1,6 +1,6 @@
 <?php
 include('template.php');
-if(isset($_POST['username']))
+if(isset($_POST['username'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
 	INSERT INTO users(username,password,email,fname,lname)
