@@ -4,8 +4,8 @@ if(isset($_POST['levname'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
 	INSERT INTO userslev(levname,password,email,name)
-	VALUES('{$_POST['levname']}','{$_POST['password']}', '{$_POST['email']}',            
-	'{$_POST['name']}')
+	VALUES('{$_POST["levname"]}','{$_POST["password"]}', '{$_POST["email"]}',            
+	'{$_POST["name"]}')
 END;
 $mysqli->query($query);
 header('Location:index.php');
