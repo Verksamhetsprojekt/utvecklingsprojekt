@@ -24,7 +24,7 @@ $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
-	$content = <<<END 
+	$content = <<<END
 	<form method="post" action="edit_article.php?artikelnr={$row->artikelnr}">
     <input type="text" name="benamning" value="{$row->benamning}">
     <input type="text" name="utpris_prislista_a" value="{$row->utpris_prislista_a}">
