@@ -13,7 +13,7 @@ if(isset($_GET['artikelnr']))
 		WHERE artikelnr = '{$_GET["artikelnr"]}'
 END;
     $mysqli->query($query);
-	}
+	echo 'Ändingarna har lagts till';}
 	
 	$query = <<<END
 	SELECT * FROM artikel
