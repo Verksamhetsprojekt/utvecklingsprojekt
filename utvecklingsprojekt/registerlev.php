@@ -15,7 +15,7 @@ $content = <<<END
 <input type="text" name="levname" placeholder="Användarnamn">
 <input type="password" name="password" placeholder="Lösenord">
 <input type="text" name="email" placeholder="E-post">
-<input type="text" name="name" placeholder="Namn">
+<input type="text" name="name" placeholder="Förnamn">
 <input type="submit" Value="Registrera">
 </form>
 END;
