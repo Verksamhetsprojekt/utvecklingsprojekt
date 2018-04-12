@@ -72,12 +72,39 @@ if(isset($_SESSION['userId']))
     <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
-	$navigation .= '
-
-    <li class="nav-item">
-      <a class="nav-link" href="register.php">Registrera ny användare</a>
-    </li>';
+	$navigation .= '<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Registrera ny användare</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="register.php"">Registrera personal</a>
+        <a class="dropdown-item" href="registerlev.php"">Registrera leverantör</a>
+        </div>
+    </li></ul>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
+}
+else if(isset($_SESSION['levId']))
+{
+  $navigation .= '
+  
+    <li class="nav-item">
+      <a class="nav-link" href="statistik.php">Se statistik</a>
+    </li>';
+  $navigation .= '
+  
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logga ut</a>
+    </li>';
+  $navigation .= '
+
+  <li class="nav-item">
+    <a class="nav-link" href="fakturor.php">Se fakturor</a>
+    </li>';
+  $navigation .= '
+
+ <li class="nav-item">
+    <a class="nav-link" href="leveranser.php">Se leveranser</a>
+    </li>';  
+  $navigation .= 'Inloggad som ' . $_SESSION['levname'];
 }
 else
 {
@@ -85,7 +112,7 @@ else
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Logga in</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="login.php"">Logga in som leverantör</a>
+        <a class="dropdown-item" href="loginlev.php"">Logga in som leverantör</a>
         <a class="dropdown-item" href="login.php"">Logga in som personal</a>
         </div>
     </li></ul>';
