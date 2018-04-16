@@ -67,11 +67,6 @@ if(isset($_SESSION['userId']))
     <li class="nav-item">
       <a class="nav-link" href="add_article.php">Lägg till artikel</a>
     </li>';
-	$navigation .= '
-  
-    <li class="nav-item">
-      <a class="nav-link" href="logout.php">Logga ut</a>
-    </li>';
 	$navigation .= '<li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Registrera ny användare</a>
@@ -80,6 +75,11 @@ if(isset($_SESSION['userId']))
         <a class="dropdown-item" href="registerlev.php">Registrera leverantör</a>
         </div>
     </li></ul>';
+  $navigation .= '
+  
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logga ut</a>
+    </li>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else if(isset($_SESSION['levId']))
@@ -90,20 +90,20 @@ else if(isset($_SESSION['levId']))
       <a class="nav-link" href="statistik.php">Se statistik</a>
     </li>';
   $navigation .= '
-  
-    <li class="nav-item">
-      <a class="nav-link" href="logout.php">Logga ut</a>
-    </li>';
-  $navigation .= '
 
   <li class="nav-item">
     <a class="nav-link" href="fakturor.php">Se fakturor</a>
     </li>';
   $navigation .= '
 
- <li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="leveranser.php">Se leveranser</a>
     </li>';  
+  $navigation .= '
+  
+  <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logga ut</a>
+    </li>';
   $navigation .= 'Inloggad som ' . $_SESSION['levname'];
 }
 else
