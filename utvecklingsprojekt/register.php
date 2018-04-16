@@ -24,7 +24,7 @@ $content = <<<END
 </form>
 END;
 
-if(!isset($_SESSION['userId'])) {
+if(!isset($_SESSION['userId'])) { //(!isset) betyder att det INTE är set
 	header("Location:login.php");
    //die("Du har inte behörighet. Vänligen logga in");
 }
