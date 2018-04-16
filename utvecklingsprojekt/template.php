@@ -75,9 +75,7 @@ if(isset($_SESSION['userId']))
         <a class="dropdown-item" href="registerlev.php">Registrera leverantör</a>
         </div>
     </li></ul>';
-  $navigation .= '
-  
-  <li class="nav-item">
+   $navigation .= '<li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
