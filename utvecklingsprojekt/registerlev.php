@@ -21,6 +21,11 @@ $content = <<<END
 </form>
 END;
 
+if(!isset($_SESSION['userId'])) {
+	header("Location:login.php");
+   //die("Du har inte behörighet. Vänligen logga in");
+}
+
 
 echo $navigation;
 echo $content;

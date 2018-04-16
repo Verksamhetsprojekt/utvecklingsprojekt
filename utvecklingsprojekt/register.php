@@ -25,7 +25,8 @@ $content = <<<END
 END;
 
 if(!isset($_SESSION['userId'])) {
-	die("Du har inte behörighet. Vänligen logga in.");
+	header("Location:login.php");
+   //die("Du har inte behörighet. Vänligen logga in");
 }
 
 
