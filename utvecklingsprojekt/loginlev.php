@@ -20,7 +20,7 @@ $res = $mysqli->query($query);
 	} 
 	else
 	{
-		echo "Fel användarnamn eller lösenord.";
+		echo '<span style="color:Red">Fel användarnamn eller lösenord.</span>';
 	}
 }
 $content = <<<END
