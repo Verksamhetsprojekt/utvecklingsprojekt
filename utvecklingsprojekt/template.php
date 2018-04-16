@@ -67,21 +67,22 @@ if(isset($_SESSION['userId']))
     <li class="nav-item">
       <a class="nav-link" href="add_article.php">Lägg till artikel</a>
     </li>';
-	$navigation .= '<li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Registrera ny användare</a>
+  $navigation .= '
+
+  
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Registrera ny användare</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="register.php">Registrera personal</a>
         <a class="dropdown-item" href="registerlev.php">Registrera leverantör</a>
         </div>
-    </li></ul>';
-      $navigation .= '
+    </li>';
+   $navigation .= '
   
   <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
-
-	$navigation .= 'Inloggad som ' . $_SESSION['username'];
+      $navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else if(isset($_SESSION['levId']))
 {
