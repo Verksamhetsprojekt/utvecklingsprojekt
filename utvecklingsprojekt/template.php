@@ -77,7 +77,7 @@ if(isset($_SESSION['userId']))
     </li></ul>';
   $navigation .= '
   
-    <li class="nav-item">
+  <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
 	$navigation .= 'Inloggad som ' . $_SESSION['username'];
