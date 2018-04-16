@@ -7,6 +7,7 @@ if(isset($_POST['username'])&&isset($_SESSION['userId']))
 	VALUES('{$_POST['username']}','{$_POST['password']}', '{$_POST['email']}',            
 	'{$_POST['fname']}', '{$_POST['lname']}')
 
+
 END;
 $mysqli->query($query);
 echo '<span style="color:Green">En ny användare har lagts till</span>';
@@ -22,6 +23,11 @@ $content = <<<END
 <input type="submit" Value="Registrera">
 </form>
 END;
+
+if(!isset($_SESSION['userId'])) {
+	die("Du har inte behörighet. Vänligen logga in.");
+}
+
 
 echo $navigation;
 echo $content;
