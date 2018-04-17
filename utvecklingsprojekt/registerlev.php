@@ -33,7 +33,26 @@ $content = <<<END
 END;
 
 if(!isset($_SESSION['userId'])) {
-	header("Location:login.php");
+	//sleep(1);
+header("refresh:0;url=login.php");
+
+//header('Location: http://localhost/login.php/php-forcing-https-over-http/');
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+
+
+//header("refresh: 5; url=login.php");
+//echo '<span style="color:Red">Du har inte behörighet, vänligen logga in</span>';
+
+
+	//header('Refresh:5; url=login.php');
+//echo 'Please Log In First';  //Funkar men visar registrera grej
+
+//header("refresh:0;url=login.php"); //funkar men visar jävla registrera grej i 0.5 sek blinkar till (popup med meddelande) tas till login
+//echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+	//header("Location:login.php");  (FUNKAR för att endast föras till login)
    //die("Du har inte behörighet. Vänligen logga in");
 }
 			echo $content;
