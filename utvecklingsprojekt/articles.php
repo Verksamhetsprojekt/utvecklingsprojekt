@@ -19,10 +19,13 @@ END;
 if(isset($_SESSION['userId']))
 {
 	    $content .= <<<END
-		<a href="delete.php?artikelnr={$row->artikelnr}" onclick="return
+			<a href="delete.php?artikelnr={$row->artikelnr}" onclick="return
 		confirm('Är du säker?')">Ta bort artikel</a><br>
-		<a href="edit_article.php?artikelnr={$row->artikelnr}">Redigera artikel</a><br>
-		
+		<a href="edit_article.php?artikelnr={$row->artikelnr}">Redigera artikel</a></br>
+
+
+
+	
 END;
 }
         $content .= '<hr>';
