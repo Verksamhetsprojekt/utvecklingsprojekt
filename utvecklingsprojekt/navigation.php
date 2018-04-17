@@ -39,6 +39,7 @@ if(isset($_SESSION['userId']))
   <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
+
       $navigation .= 'Inloggad som ' . $_SESSION['username'];
 }
 else if(isset($_SESSION['levId']))

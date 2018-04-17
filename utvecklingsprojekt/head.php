@@ -6,6 +6,16 @@
 		<title>HFAB</title>
 	</head>
 
+	<header>
+  		<div class="container-fluid text-center">	
+			<h1>Välkommen till Hellströms Fordonsteknik AB</h1>
+			<h6><i>Din specialistpartner sedan 1967</i></h6><hr>
+		</div>
+		<?php
+		echo $navigation;
+		?>
+	</header>
+
 <style>
 .body {
   min-height: 100vh;
