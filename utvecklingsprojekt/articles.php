@@ -33,7 +33,7 @@ if($res->num_rows > 0)
 	{
 		$content .= <<<END
 		{$row->benamning}<br>
-		{$row->utpris_prislista_a}
+		{$row->utpris_prislista_a}<br>
 		<a href="article_details.php?artikelnr={$row->artikelnr}">Läs mer</a><br>
 END;
 if(isset($_SESSION['userId']))
