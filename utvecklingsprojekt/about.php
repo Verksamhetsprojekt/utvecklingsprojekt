@@ -1,24 +1,47 @@
-<meta charset?"utf-8">
+<!doctype html>
+<html>
+	<?php
+	include('head.php');
+	include('connection.php');
+	include('navigation.php');
+	?>
 
-<?php
-include('template.php');
-$content = <<<END
-<h1>Om HFAB</h1>
-<p>Om Hellströms Fordonsteknik AB (HFAB)
-Företaget HFAB har funnits sedan 1967 och verksamheten består i dagsläget av 33 medarbetare. Man tillverkar ett hundratal artiklar för fordonsteknik, exempelvis tankar, vattenpumpar och ventiler som blivit ett specialistområde. </p>
+	<header>
+  		<div class="container-fluid text-center">	
+			<h1>Välkommen till Hellströms Fordonsteknik AB</h1>
+			<h6><i>Din specialistpartner sedan 1967</i></h6><hr>
+		</div>
+		<?php
+		echo $navigation;
+		?>
+	</header>
 
-<h3>Skicka ett meddelande</h3>
-<form action="send.php" method="post">
-<input type="text" name="name" placeholder="Name">
-<br>
-<textarea name="msg" placeholder="Message"></textarea>
-<br>
-<input type="submit" value="Skicka">
-</form>
+<!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
+	<body>
+		<div class="container text-center">
+			<?php
+			$content = <<<END
+			<h2>Om HFAB</h2>
+				<p>Företaget HFAB har funnits sedan 1967 och verksamheten består i dagsläget av 33 medarbetare. Man tillverkar ett hundratal artiklar för fordonsteknik, exempelvis tankar, vattenpumpar och ventiler som blivit ett specialistområde.</p>
+				<h3>Skicka ett meddelande</h3>
+				<form action="send.php" method="post">
+				<input type="text" name="name" placeholder="Name">
+				<br>
+				<textarea name="msg" placeholder="Message"></textarea>
+				<br>
+				<input type="submit" value="Skicka">
+				</form>
 END;
+			echo $content;
+			?>
+		</div>
+	</body>
+<!-- Här slutar Body-->
 
-echo $navigation;
-echo $content;
-echo $footer;
+	<footer class="footer container-fluid text-center bg-light">
+		<?php
+		include('footer.php');
+		?>
+	</footer>
 
-?>
+</html>

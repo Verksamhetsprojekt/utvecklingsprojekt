@@ -1,6 +1,26 @@
-<?php
-include('template.php');
-$content = ' ';
+<!doctype html>
+<html>
+	<?php
+	include('head.php');
+	include('connection.php');
+	include('navigation.php');
+	?>
+
+	<header>
+  		<div class="container-fluid text-center">	
+			<h1>Välkommen till Hellströms Fordonsteknik AB</h1>
+			<h6><i>Din specialistpartner sedan 1967</i></h6><hr>
+		</div>
+		<?php
+		echo $navigation;
+		?>
+	</header>
+
+<!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
+	<body class="body">
+		<div class="container text-center">
+			<?php
+			$content = ' ';
 $query = <<<END
 SELECT * FROM artikel
 ORDER BY created_at DESC
@@ -29,8 +49,16 @@ END;
 
 	}
 }
+			echo $content;
+			?>
+		</div>
+	</body>
+<!-- Här slutar Body-->
 
-echo $navigation;
-echo $content;
-echo $footer;
-?>
+	<footer class="footer container-fluid text-center bg-light">
+		<?php
+		include('footer.php');
+		?>
+	</footer>
+
+</html>
