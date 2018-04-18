@@ -36,8 +36,12 @@ $content = <<<END
 END;
 
 if(!isset($_SESSION['userId'])) { //(!isset) betyder att det INTE är set
-	header("Location:login.php");
+	//header("Location:login.php");
    //die("Du har inte behörighet. Vänligen logga in");
+	header("refresh:0;url=login.php");
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
 }
 			echo $content;
 			?>
