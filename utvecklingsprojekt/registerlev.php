@@ -19,6 +19,7 @@
 	'{$_POST["name"]}')
 END;
 $mysqli->query($query);
+echo'<script type="text/javascript">alert("Har du fyllt i alla uppgifter?");</script>';
 echo '<span style="color:Green">En ny användare har lagts till</span>';
 }
 

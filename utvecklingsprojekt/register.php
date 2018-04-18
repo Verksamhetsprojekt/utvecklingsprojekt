@@ -20,9 +20,12 @@
 
 
 END;
-$mysqli->query($query);
+
+echo '<script type="text/javascript">alert("Stämmer uppgifterna?");</script>';
 echo '<span style="color:Green">En ny användare har lagts till</span>';
 }
+
+ //<a href="delete.php?artikelnr={$row->artikelnr}="deletelink" onclick="return confirm('Are you sure?')">Radera artikel</a></br>
 
 $content = <<<END
 <form method="post" action="register.php">
