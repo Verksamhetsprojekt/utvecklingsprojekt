@@ -26,12 +26,13 @@ if($res->num_rows > 0)
 		{$row->benamning}<br>
 		{$row->utpris_prislista_a}<br>
 		<a href="article_details.php?artikelnr={$row->artikelnr}">Läs mer</a><br>
+
 END;
 		if(isset($_SESSION['userId']))
 		{
 			    $content .= <<<END
 			    <a href="edit_article.php?artikelnr={$row->artikelnr}">Redigera artikel</a><br>
-			    <a href="delete.php?artikelnr={$row->artikelnr}="deletelink" onclick="return confirm('Are you sure?')">Radera artikel</a></br>
+			    <a href="delete.php?artikelnr={$row->artikelnr}="deletelink" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></br>
 				
 END;
 		}
