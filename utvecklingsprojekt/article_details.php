@@ -11,11 +11,11 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['artikelnr']))
+			if(isset($_GET['ArticleNumber']))
 {
 	$query = <<<END
-	SELECT * FROM artikel
-	WHERE artikelnr = '{$_GET["artikelnr"]}'
+	SELECT * FROM article
+	WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
 
 $res = $mysqli->query($query);
@@ -24,10 +24,10 @@ if($res->num_rows > 0)
 	$row = $res->fetch_object();
 	$content .= <<<END
 	<form method="get" action="article_details.php">
-	Artikelnr: {$row->artikelnr}<br>
-	Benämning: {$row->benamning}<br>
-	Pris: {$row->utpris_prislista_a}<br>
-	Lagerplats: {$row->lagerplats}<br>
+	Artikelnr: {$row->ArticleNumber}<br>
+	Benämning: {$row->Description}<br>
+	Pris: {$row->SalesPrice}<br>
+	Lagerplats: {$row->StockPlace}<br>
 	Datum: {$row->created_at}
 	</form>
 END;

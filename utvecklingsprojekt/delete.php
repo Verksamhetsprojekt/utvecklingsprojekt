@@ -10,11 +10,11 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['artikelnr'])&&isset($_SESSION['userId']))
+			if(isset($_GET['ArticleNumber'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
-	DELETE FROM artikel
-	WHERE artikelnr = '{$_GET["artikelnr"]}'
+	DELETE FROM article
+	WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
 $mysqli->query($query);
 echo '<span style="color:Red">Artikeln har raderats</span>';

@@ -11,12 +11,12 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_POST['benamning'])&&isset($_SESSION['userId']))
+			if(isset($_POST['Description'])&&isset($_SESSION['userId']))
 {
 	$query = <<<END
-	INSERT INTO artikel(benamning,utpris_prislista_a,lagerplats)
-	VALUES('{$_POST['benamning']}','{$_POST['utpris_prislista_a']}',
-	'{$_POST['lagerplats']}')
+	INSERT INTO article(Description,SalesPrice,StockPlace)
+	VALUES('{$_POST['Description']}','{$_POST['SalesPrice']}',
+	'{$_POST['StockPlace']}')
 END;
 $mysqli->query($query);
 echo '<span style="color:Green">Artikel har lagts till</span>';
@@ -24,9 +24,9 @@ echo '<span style="color:Green">Artikel har lagts till</span>';
 
 $content = <<<END
 <form method="post" action="add_article.php">
-<input type="text" name="benamning" placeholder="Benämning">
-<input type="text" name="utpris_prislista_a" placeholder="Pris">
-<input type="text" name="lagerplats" placeholder="Lagerplats">
+<input type="text" name="Description" placeholder="Benämning">
+<input type="text" name="SalesPrice" placeholder="Pris">
+<input type="text" name="StockPlace" placeholder="Lagerplats">
 <input type="submit" Value="Lägg till artikel">
 </form>
 END;

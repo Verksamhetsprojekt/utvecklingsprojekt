@@ -11,24 +11,24 @@
 		<div class="container text-center">
 			<?php
 			$content = ' ';
-if(isset($_GET['artikelnr'])&&isset($_SESSION['userId']))
+if(isset($_GET['ArticleNumber'])&&isset($_SESSION['userId']))
 {
-	if(isset($_POST['benamning']))
+	if(isset($_POST['Description']))
 	{
 		$query = <<<END
-		UPDATE artikel
-		SET benamning = '{$_POST["benamning"]}',
-		utpris_prislista_a = '{$_POST["utpris_prislista_a"]}',
-		lagerplats = '{$_POST["lagerplats"]}'
-		WHERE artikelnr = '{$_GET["artikelnr"]}'
+		UPDATE article
+		SET Description = '{$_POST["Description"]}',
+		SalesPrice = '{$_POST["SalesPrice"]}',
+		StockPlace = '{$_POST["StockPlace"]}'
+		WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
     $mysqli->query($query);
 	echo '<span style="color:Green">Ändringarna har lagts till</span>';}
 
 	
 	$query = <<<END
-	SELECT * FROM artikel
-	WHERE artikelnr = '{$_GET["artikelnr"]}'
+	SELECT * FROM article
+	WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
 
 $res = $mysqli->query($query);
@@ -36,10 +36,10 @@ if($res->num_rows > 0)
 {
 	$row = $res->fetch_object();
 	$content = <<<END
-	<form method="post" action="edit_article.php?artikelnr={$row->artikelnr}">
-    <input type="text" name="benamning" value="{$row->benamning}">
-    <input type="text" name="utpris_prislista_a" value="{$row->utpris_prislista_a}">
-    <input type="text" name="lagerplats" value="{$row->lagerplats}">
+	<form method="post" action="edit_article.php?ArticleNumber={$row->ArticleNumber}">
+    <input type="text" name="Description" value="{$row->Description}">
+    <input type="text" name="SalesPrice" value="{$row->SalesPrice}">
+    <input type="text" name="StockPlace" value="{$row->StockPlace}">
     <input type="submit" Value="Spara">
     </form>
 END;
