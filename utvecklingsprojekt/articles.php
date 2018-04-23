@@ -76,19 +76,23 @@ $content .= <<<END
   </tr>
      
 END;
-}
-$content .= '</table>';
-}
+
+
 		if(isset($_SESSION['userId']))
 		{
 			    $content .= <<<END
-			    <a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a><br>
-			    <a href="delete.php?ArticleNumber={$row->ArticleNumber}="deletelink" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></br>
+			    <tr>
+			    <th><a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a></th>
+			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}="deletelink" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
+			    </tr>
 				
 END;
+      $content .= '</table>';
 		}
-        
-   // $content .= '<hr>';
+	}
+}
+  
+ // $content .= '<hr>';
 
 			echo $content;
 			?>
