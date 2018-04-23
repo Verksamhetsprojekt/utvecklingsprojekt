@@ -2,7 +2,7 @@
 <html>
 	<?php
 	include('head.php');
-	include('connection.php');
+	include('googleConnection.php');
 	include('navigation.php');
 	echo $navigation;
 	?>
@@ -30,15 +30,33 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
+        data.addColumn('string', 'City');
+        data.addColumn('number', 'Profit');
+        /*data.addRows([
           ['Mushrooms', 3],
           ['Onions', 1],
           ['Olives', 1],
           ['Zucchini', 1],
           ['Pepperoni', 2]
-        ]);
+
+        ]); */
+
+        <?php
+
+        	if($conn){
+$query = <<<END
+SELECT TOP 10 SUM(Profit) AS Profit, City FROM STSFacts, STSDimLocation
+WHERE STSFacts.LocationID = STSDimlocation.LocationID
+GROUP BY City
+END;
+
+				if(($result = sqlsrv_query($conn, $query)) !== false){
+					while( $obj = sqlsrv_fetch_object( $result )) {
+						echo 'data.addRow(["'.$obj->City.'", '.$obj->Profit.']);';
+					}
+				}
+        	}
+        	?>
 
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
