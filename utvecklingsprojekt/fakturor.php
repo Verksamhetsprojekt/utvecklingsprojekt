@@ -14,11 +14,10 @@
 
 
 
-$content = '<h1>Leverantörsfakturor</h1>';
 
 $suppliers = json_decode(apiCall('GET', 'supplierinvoices'), true);
 
-var_dump($suppliers);
+//var_dump($suppliers);
 
 if(count($suppliers) > 0)
 {
@@ -41,10 +40,10 @@ $mysqli->query($query);
 
      $content = ' ';
      $query = <<<END
-     SELECT * FROM SupplierInvoices
+     SELECT * FROM supplierinvoices
 END;
 
-echo "HEJ";
+echo $content;
 
 			/*$content = <<<END
 <h1>Välkommen till HFAB</h1>
