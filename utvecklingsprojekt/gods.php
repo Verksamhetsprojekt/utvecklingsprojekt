@@ -48,19 +48,16 @@ if($res->num_rows > 0)
 	while($row = $res->fetch_object())
 	{
 $content .= <<<END
-
-<table class="table">
-<tr>
-<th>Kund{$row->CustomerName}</th>
- 
-         <th>Order Datum</li><th>{$row->OrderDate}</th>
+ <table class="table">
+<caption>{$row->CustomerName}</caption>
+  <tr>
+         <th>{$row->OrderDate}</th>
          <th>{$row->DeliveryDate}</th>
-         <th>{$row->Project}</th>
          <th>{$row->Sent}</th>
          <th>{$row->Total}</th>
+         
   </tr>
-     
-
+    
 END;
 
 $content .= '</table>';
