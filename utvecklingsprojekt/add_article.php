@@ -24,9 +24,21 @@ echo '<span style="color:Green">Artikel har lagts till</span>';
 
 $content = <<<END
 <form method="post" action="add_article.php">
-<input type="text" name="Description" placeholder="Benämning">
-<input type="text" name="SalesPrice" placeholder="Pris">
-<input type="text" name="StockPlace" placeholder="Lagerplats">
+<input
+  type="text"
+        name="Description" required
+        placeholder="Benämningn"
+        title="Benämning krävs">
+<input
+  type="text"
+        name="SalesPricen" required
+        placeholder="Pris"
+        title="Pris krävs">
+<input
+  type="text"
+        name="StockPlace" required
+        placeholder="Lagerplats"
+        title="Lagerplats krävs">
 <input type="submit" Value="Lägg till artikel">
 </form>
 END;
