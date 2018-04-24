@@ -35,8 +35,8 @@ END;*/
 foreach($products['Articles'] as $article)
 {
 	$query = <<<END
-	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle, created_at)
-	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}','{$article["created_at"]}')
+	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle)
+	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}')
 END;
 $mysqli->query($query);
 }
@@ -58,7 +58,7 @@ $content .= '</table>';
 			$content = ' ';
 $query = <<<END
 SELECT * FROM article
-ORDER BY created_at DESC
+ORDER BY Description ASC
 END;
 
 
@@ -87,14 +87,15 @@ END;
 			    </tr>
 				
 END;
-      $content .= '</table>';
+     $content .= '</table>';
 		}
 	}
 }
   
- // $content .= '<hr>';
+ $content .= '<hr>';
 
 			echo $content;
+
 			?>
 		</div>
 	</body>
