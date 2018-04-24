@@ -14,14 +14,8 @@
 			$content = <<<END
 			<h2>Om HFAB</h2>
 				<p>Företaget HFAB har funnits sedan 1967 och verksamheten består i dagsläget av 33 medarbetare. Man tillverkar ett hundratal artiklar för fordonsteknik, exempelvis tankar, vattenpumpar och ventiler som blivit ett specialistområde.</p>
-				<h3>Skicka ett meddelande</h3>
-				<form action="send.php" method="post">
-				<input type="text" name="name" placeholder="Name">
-				<br>
-				<textarea name="msg" placeholder="Message"></textarea>
-				<br>
-				<input type="submit" value="Skicka">
-				</form>
+			
+
 END;
 			echo $content;
 			?>
