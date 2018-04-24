@@ -25,7 +25,7 @@
 
 END;
 $mysqli->query($query);
-echo '<script type="text/javascript">alert("Stämmer uppgifterna?");</script>';
+//echo '<script type="text/javascript">alert("Stämmer uppgifterna?");</script>';
 echo '<span style="color:Green">En ny användare har lagts till</span>';
 }
 
@@ -34,11 +34,34 @@ echo '<span style="color:Green">En ny användare har lagts till</span>';
 $content = <<<END
 
 <form method="post" action="register.php">
-<input type="text" name="username" placeholder="Användarnamn">
-<input type="password" name="password" placeholder="Lösenord">
-<input type="text" name="email" placeholder="E-post">
-<input type="text" name="fname" placeholder="Förnamn">
-<input type="text" name="lname" placeholder="Efternamn">
+    <input
+    type="text"
+        name="username" required
+        placeholder="Användarnamn"
+        pattern="[a-z]{1,10}"
+        title="Användarnamnet ska endast bestå av små bokstäver exempelvis: john">
+  <input
+  type="text"
+        name="password" required
+        placeholder="Lösenord"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+        title="Lösenordet behöver bestå av minst 5 tecken, varav minst ett nummer och både stora och små bokstäver">
+  <input
+  type="text"
+        name="email" required
+        placeholder="E-post"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        title="Ogiltigt e-mail format, exempel på email you@example.com">
+  <input
+  type="text"
+        name="fname" required
+        placeholder="Förnamn"
+        title="Förnamn krävs">
+  <input
+  type="text"
+        name="lname" required
+        placeholder="Efternamn"
+        title="Efternamn krävs">
 <input type="submit" value="Registrera"></input>
 </form>
 
