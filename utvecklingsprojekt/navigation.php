@@ -46,8 +46,13 @@ else if(isset($_SESSION['levId']))
 {
   $navigation .= '
   
-    <li class="nav-item">
-      <a class="nav-link" href="statistik.php">Se statistik</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Se statistik</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="statistik.php">Statistik betalningar</a>
+        <a class="dropdown-item" href="statistik.php">Statistik leveranser</a>
+        </div>
     </li>';
   $navigation .= '
 
