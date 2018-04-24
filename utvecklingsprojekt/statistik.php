@@ -2,7 +2,7 @@
 <html>
 	<?php
 	include('head.php');
-	include('googleConnection.php');
+	include('connection.php');
 	include('navigation.php');
 	echo $navigation;
 	?>
@@ -30,8 +30,8 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'City');
-        data.addColumn('number', 'Profit');
+        data.addColumn('string', 'benamning');
+        data.addColumn('number', 'utpris_prislista_a');
         /*data.addRows([
           ['Mushrooms', 3],
           ['Onions', 1],
@@ -43,19 +43,27 @@
 
         <?php
 
-        	if($conn){
+        	if($mysqli){
 $query = <<<END
-SELECT TOP 10 SUM(Profit) AS Profit, City FROM STSFacts, STSDimLocation
-WHERE STSFacts.LocationID = STSDimlocation.LocationID
-GROUP BY City
+SELECT benamning, utpris_prislista_a FROM artikel
+GROUP BY utpris_prislista_a
 END;
 
-				if(($result = sqlsrv_query($conn, $query)) !== false){
-					while( $obj = sqlsrv_fetch_object( $result )) {
+$res = $mysqli->query($query);
+if($res->num_rows > 0)
+{
+	while($row = $res->fetch_object())
+	{
+		echo 'data.addRow(["'.$row->benamning.'", '.$row->utpris_prislista_a.']);';
+	}
+				
+					/*while( $obj = ( $result )) {
 						echo 'data.addRow(["'.$obj->City.'", '.$obj->Profit.']);';
 					}
 				}
-        	}
+        	}*/
+        }
+    }
         	?>
 
         // Set chart options

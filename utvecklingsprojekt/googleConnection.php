@@ -4,7 +4,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'test');
 
 $serverName = "ideweb.hh.se";
 $connectionInfo = array( "Database"=>"phihei", "UID"=>"phihei", "PWD"=>"ditt_lösen");
-$conn = sqlsrv:_connect( $serverName, $connectionInfo);
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 if( $conn ) {
 
