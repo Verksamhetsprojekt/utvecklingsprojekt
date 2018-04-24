@@ -25,36 +25,46 @@ echo '<span style="color:Green">En ny användare har lagts till</span>';
 
 $content = <<<END
 <form method="post" action="registerlev.php">
-<input type="text" name="levname" placeholder="Användarnamn">
-<input type="password" name="password" placeholder="Lösenord">
-<input type="text" name="email" placeholder="E-post">
-<input type="text" name="name" placeholder="Namn">
-<input type="submit" Value="Registrera">
+  <input
+  type="text"
+        name="levname" required
+        placeholder="Användarnamn"
+        pattern="[a-z]{1,10}"
+        title="Användarnamnet ska endast bestå av små bokstäver exempelvis: john">
+  <input
+  type="text"
+        name="password" required
+        placeholder="Lösenord"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+        title="Lösenordet behöver bestå av minst 5 tecken, varav minst ett nummer och både stora och små bokstäver">
+  <input
+  type="text"
+        name="email" required
+        placeholder="E-post"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        title="Ogiltigt e-mail format, exempel på email you@example.com">
+  <input
+  type="text"
+        name="name" required
+        placeholder="Namn"
+        title="Namn krävs">
+<input type="submit" value="Registrera"></input>
 </form>
+
+
+
 END;
 
 if(!isset($_SESSION['userId'])) {
-	//sleep(1);
+	
 header("refresh:0;url=login.php");
 
-//header('Location: http://localhost/login.php/php-forcing-https-over-http/');
  echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
 
 exit;
 
 
-//header("refresh: 5; url=login.php");
-//echo '<span style="color:Red">Du har inte behörighet, vänligen logga in</span>';
 
-
-	//header('Refresh:5; url=login.php');
-//echo 'Please Log In First';  //Funkar men visar registrera grej
-
-//header("refresh:0;url=login.php"); //funkar men visar jävla registrera grej i 0.5 sek blinkar till (popup med meddelande) tas till login
-//echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
-
-	//header("Location:login.php");  (FUNKAR för att endast föras till login)
-   //die("Du har inte behörighet. Vänligen logga in");
 }
 			echo $content;
 			?>
