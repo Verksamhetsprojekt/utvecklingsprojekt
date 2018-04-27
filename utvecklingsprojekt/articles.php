@@ -25,14 +25,7 @@ if(count($products) > 0)
 	DELETE FROM article
 END;
 $mysqli->query($query);
-	/*$content .= <<<END
-	<table class="table">
-	<tr>
-	    <th>ArticleNumber</th>
-	    <th>Description</th>
-	    <th>Sales Price</th>
-	</tr>
-END;*/
+
 foreach($products['Articles'] as $article)
 {
 	$query = <<<END
@@ -42,19 +35,6 @@ END;
 $mysqli->query($query);
 }
 }
-	/*$content .= <<<END
-	<tr>
-	    <td>{$article['ArticleNumber']}</td>
-	    <td>{$article['Description']}</td>
-	    <td>{$article['SalesPrice']}</td>
-	</tr>
-END;
-}
-
-$content .= '</table>';
-}
-*/
-
 
 			$content = ' ';
 $query = <<<END
@@ -66,9 +46,27 @@ END;
 $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
+			$content .= <<<END
+	<table class="table">
+	<tr>
+	    <th>Artikelnummer</th>
+	    <th>Benämning</th>
+	    <th>Pris</th>
+	</tr>
+END;
 	while($row = $res->fetch_object())
 	{
-$content .= <<<END
+
+			$content .= <<<END
+	<tr>
+	    <td>{$row->ArticleNumber}</td>
+	    <td>{$row->Description}</td>
+	    <td>{$row->SalesPrice}</td>
+	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
+	</tr>
+END;
+
+/*$content .= <<<END
 <table class="table">
 <caption>{$row->Description}</caption>
   <tr>
@@ -77,7 +75,7 @@ $content .= <<<END
   </tr>
      
 END;
-
+*/
 
 		if(isset($_SESSION['userId']))
 		{
@@ -88,7 +86,9 @@ END;
 			    </tr>
 				
 END;
-     $content .= '</table>';
+
+$content .= '</table>';
+
 		}
 	}
 }

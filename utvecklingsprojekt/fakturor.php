@@ -17,7 +17,7 @@
 
 $suppliers = json_decode(apiCall('GET', 'supplierinvoices'), true);
 
-//var_dump($suppliers);
+var_dump($suppliers);
 
 if(count($suppliers) > 0)
 {
