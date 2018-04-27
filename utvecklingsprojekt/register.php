@@ -25,7 +25,7 @@
 
 END;
 $mysqli->query($query);
-//echo '<script type="text/javascript">alert("Stämmer uppgifterna?");</script>';
+echo '<script type="text/javascript">alert("Stämmer uppgifterna?");</script>';
 echo '<span style="color:Green">En ny användare har lagts till</span>';
 }
 
@@ -64,6 +64,7 @@ $content = <<<END
         title="Efternamn krävs">
 <input type="submit" value="Registrera"></input>
 </form>
+
 
 END;
 
