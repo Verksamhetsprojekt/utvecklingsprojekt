@@ -17,6 +17,7 @@ include('config.php');
 $products = json_decode(apiCall('GET', 'articles'), true);
 
 //var_dump($products);
+//test
 
 if(count($products) > 0)
 {
