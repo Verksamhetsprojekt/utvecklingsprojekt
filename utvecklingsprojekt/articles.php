@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<meta charset="utf-8">
 	<?php
 	include('head.php');
 	include('connection.php');
