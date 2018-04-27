@@ -7,6 +7,7 @@
 	echo $navigation;
 	?>
 
+
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
