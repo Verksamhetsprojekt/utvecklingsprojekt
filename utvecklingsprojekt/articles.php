@@ -63,8 +63,8 @@ END;
 	    <td>{$row->Description}</td>
 	    <td>{$row->SalesPrice}</td>
 	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
-	</tr>
 END;
+
 
 /*$content .= <<<END
 <table class="table">
@@ -73,26 +73,29 @@ END;
          <th>{$row->SalesPrice}</th>
          <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
   </tr>
-     
-END;
+END;  
+
 */
 
 		if(isset($_SESSION['userId']))
 		{
+			    
 			    $content .= <<<END
-			    <tr>
 			    <th><a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a></th>
 			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}="deletelink" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
 			    </tr>
+
 				
 END;
 
-$content .= '</table>';
+
 
 		}
+
 	}
+
 }
-  
+  $content .= '</table>';
  $content .= '<hr>';
 
 			echo $content;
