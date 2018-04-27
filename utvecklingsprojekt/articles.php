@@ -63,6 +63,7 @@ END;
 	    <td>{$row->Description}</td>
 	    <td>{$row->SalesPrice}</td>
 	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
+
 END;
 
 

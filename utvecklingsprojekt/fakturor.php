@@ -15,11 +15,13 @@
 
 
 
-$suppliers = json_decode(apiCall('GET', 'supplierinvoices'), true);
+$supplierinvoices = json_decode(apiCall('GET', 'supplierinvoices'), true);
 
-var_dump($suppliers);
+//var_dump($supplierinvoices["SupplierInvoices"]);
 
-if(count($suppliers) > 0)
+//var_dump($supplierinvoices[0]["Balance"]);
+
+if(count($supplierinvoices["SupplierInvoices"]) > 0)
 {
 	$query = <<<END
 	DELETE FROM supplierinvoices
@@ -28,21 +30,49 @@ $mysqli->query($query);
 
 //FUNGERAR INTE HÄRIFRÅN, SKA FIXA SEN
 
-foreach($suppliers['supplierinvoices'] as $supplierinvoices)
+foreach($supplierinvoices["SupplierInvoices"] as $supplierinvoices)
 {
 	$query = <<<END
-	INSERT INTO supplierinvoices(Balance,Booked,Cancel,Currency,DueDate,GivenNumber,InvoiceDate,InvoiceNumber,SupplierNumber,SupplierName,Total,AuthorizerName)
+INSERT INTO supplierinvoices(Balance,Booked,Cancel,Currency,DueDate,GivenNumber,InvoiceDate,InvoiceNumber,SupplierNumber,SupplierName,
+		Total,AuthorizerName)
 	VALUES('{$supplierinvoices["Balance"]}','{$supplierinvoices["Booked"]}','{$supplierinvoices["Cancel"]}','{$supplierinvoices["Currency"]}','{$supplierinvoices["DueDate"]}','{$supplierinvoices["GivenNumber"]}','{$supplierinvoices["InvoiceDate"]}','{$supplierinvoices["InvoiceNumber"]}','{$supplierinvoices["SupplierNumber"]}','{$supplierinvoices["SupplierName"]}','{$supplierinvoices["Total"]}','{$supplierinvoices["AuthorizerName"]}')
+
 END;
-$mysqli->query($query);
+$mysqli->query($query) or die($mysqli->error);
 }
 }
 
      $content = ' ';
      $query = <<<END
      SELECT * FROM supplierinvoices
+     ORDER BY SupplierName ASC
 END;
 
+$res = $mysqli->query($query);
+if($res->num_rows > 0)
+{
+			$content .= <<<END
+	<table class="table">
+	<tr>
+	    <th>Leverantör</th>
+	    <th>Förfallodatum</th>
+	    <th>Totalt</th>
+	</tr>
+END;
+	while($row = $res->fetch_object())
+	{
+
+			$content .= <<<END
+	<tr>
+	    <td>{$row->SupplierName}</td>
+	    <td>{$row->DueDate}</td>
+	    <td>{$row->Total}</td>
+	    <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
+END;
+}
+}
+
+$content .= '</table>';
 echo $content;
 
 			/*$content = <<<END

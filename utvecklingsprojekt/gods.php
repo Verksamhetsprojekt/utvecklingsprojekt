@@ -45,25 +45,34 @@ END;
 $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
+	$content .= <<<END
+	<table class="table">
+	<tr>
+	    <th>Kundnamn</th>
+	    <th>Beställningsdatum</th>
+	    <th>Leveransdatum</th>
+	    <th>Skickat</th>
+	    <th>Totalt</th>
+	</tr>
+END;
 	while($row = $res->fetch_object())
 	{
 $content .= <<<END
- <table class="table">
-<caption>{$row->CustomerName}</caption>
-  <tr>
-         <th>{$row->OrderDate}</th>
-         <th>{$row->DeliveryDate}</th>
-         <th>{$row->Sent}</th>
-         <th>{$row->Total}</th>
+<tr>
+<td>{$row->CustomerName}</td>
+         <td>{$row->OrderDate}</td>
+         <td>{$row->DeliveryDate}</td>
+         <td>{$row->Sent}</td>
+         <td>{$row->Total}</td>
          
   </tr>
     
 END;
 
-$content .= '</table>';
-}
-}
 
+}
+}
+$content .= '</table>';
 echo $content;
 
 

@@ -9,3 +9,7 @@
 
 //http://shiflett.org/articles/foiling-cross-site-attacks 
 
+
+
+ERROR-Meddelande
+$mysqli->query($query) or die($mysqli->error);
