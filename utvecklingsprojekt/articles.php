@@ -10,7 +10,7 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body class="body">
 		<div class="container text-center">
-			<meta charset="utf-8">
+	
 			<?php
 
 include('config.php');
