@@ -58,6 +58,7 @@ END;
 	while($row = $res->fetch_object())
 	{
 $content .= <<<END
+<th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
 <tr>
 <td>{$row->CustomerName}</td>
          <td>{$row->OrderDate}</td>
