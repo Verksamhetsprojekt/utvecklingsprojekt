@@ -27,11 +27,11 @@ $content = <<<END
 <input
   type="text"
         name="Description" required
-        placeholder="Benämningn"
+        placeholder="Benämning"
         title="Benämning krävs">
 <input
   type="text"
-        name="SalesPricen" required
+        name="SalesPrice" required
         placeholder="Pris"
         title="Pris krävs">
 <input
