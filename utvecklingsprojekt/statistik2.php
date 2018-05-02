@@ -41,6 +41,7 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'SupplierName');
         data.addColumn('number', 'Total');
+        data.addColumn('date', 'DueDate')
         /*data.addRows([
           ['Mushrooms', 3],
           ['Onions', 1],
@@ -54,7 +55,7 @@
 
           if($mysqli){
 $query = <<<END
-SELECT SUM(Total), SupplierName FROM supplierinvoices GROUP BY SupplierName
+SELECT Total, DueDate SupplierName FROM supplierinvoices GROUP BY SupplierName
 END;
 
 $res = $mysqli->query($query);
@@ -62,7 +63,7 @@ if($res->num_rows > 0)
 {
   while($row = $res->fetch_object())
   {
-    echo 'data.addRow(["'.$row->SupplierName.'",'.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->Total.']);';
+    echo 'data.addRow(["'.$row->SupplierName.'",'.$row->Total.','.$row->DueDate.'])';
   }
         
           /*while( $obj = ( $result )) {
