@@ -1,18 +1,18 @@
 <!doctype html>
 <html>
-	<?php
-	include('head.php');
-	include('connection.php');
-	include('navigation.php');
-	echo $navigation;
-	?>
+  <?php
+  include('head.php');
+  include('connection.php');
+  include('navigation.php');
+  echo $navigation;
+  ?>
 
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
-	<body>
-		<div class="container text-center">
+  <body>
+    <div class="container text-center">
       <h2>Statistik</h2><br>
-      <h4><i>Försäljning över tid</i></h4>
-			
+      <h4><i>Försäljning per leverantör</i></h4>
+      
 <!-- Nedanför är kod för Google Charts-API-->
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
@@ -39,7 +39,7 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('date', 'DueDate');
+        data.addColumn('string', 'SupplierName');
         data.addColumn('number', 'Total');
         /*data.addRows([
           ['Mushrooms', 3],
@@ -54,8 +54,7 @@
 
           if($mysqli){
 $query = <<<END
-SELECT DueDate, Total FROM supplierinvoices
-ORDER BY DueDate
+SELECT SUM(Total), SupplierName FROM supplierinvoices GROUP BY SupplierName
 END;
 
 $res = $mysqli->query($query);
@@ -63,7 +62,7 @@ if($res->num_rows > 0)
 {
   while($row = $res->fetch_object())
   {
-    echo 'data.addRow([new Date("'.$row->DueDate.'"),'.$row->Total.']);';
+    echo 'data.addRow(["'.$row->SupplierName.'",'.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->SupplierName.','.$row->Total.']);';
   }
         
           /*while( $obj = ( $result )) {
@@ -76,11 +75,10 @@ if($res->num_rows > 0)
           ?>
 
         // Set chart options
-        var options = {'title':'Försäljningsstatistik',
+        var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':1000,
-                       'height':600,
-                       'bar': {groupWidth: "95%"},
-        'legend': { position: "none" }};
+                       'height':600
+                       };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ChartWrapper({containerId:'chart_div'});
@@ -92,21 +90,21 @@ if($res->num_rows > 0)
     </script>
     <!-- GoogleCharts-kod slut-->
 
-    		<?php
-    		$content = <<<END
-    		
-    		<div id="chart_div"></div>
+        <?php
+        $content = <<<END
+        
+        <div id="chart_div"></div>
 END;
-			echo $content;
-			?>
-		</div>
-	</body>
+      echo $content;
+      ?>
+    </div>
+  </body>
 <!-- Här slutar Body-->
 
-	<footer class="footer container-fluid text-center bg-light">
-		<?php
-		include('footer.php');
-		?>
-	</footer>
+  <footer class="footer container-fluid text-center bg-light">
+    <?php
+    include('footer.php');
+    ?>
+  </footer>
 
 </html>

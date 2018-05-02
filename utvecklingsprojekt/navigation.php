@@ -34,6 +34,10 @@ if(isset($_SESSION['userId']))
         <a class="dropdown-item" href="registerlev.php">Registrera leverantör</a>
         </div>
     </li>';
+ $navigation .= '
+    <li class="nav-item">
+    <a class="nav-link" href="gods.php">Se ordrar</a>
+    </li>';  
    $navigation .= '
   
   <li class="nav-item">
@@ -50,8 +54,8 @@ else if(isset($_SESSION['levId']))
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Se statistik</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="statistik.php">Statistik betalningar</a>
-        <a class="dropdown-item" href="statistik.php">Statistik leveranser</a>
+        <a class="dropdown-item" href="statistik.php">Försäljning över tid</a>
+        <a class="dropdown-item" href="statistik2.php">Försäljning per leverantör</a>
         </div>
     </li>';
   $navigation .= '
@@ -69,6 +73,10 @@ else if(isset($_SESSION['levId']))
   <li class="nav-item">
       <a class="nav-link" href="logout.php">Logga ut</a>
     </li>';
+
+   
+
+  
   $navigation .= 'Inloggad som ' . $_SESSION['levname'];
 }
 else
