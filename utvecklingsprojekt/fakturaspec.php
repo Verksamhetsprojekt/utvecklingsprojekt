@@ -11,7 +11,7 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['SupplierNumber'])&&(isset($_SESSION['userId'])))
+			if(isset($_GET['SupplierNumber'])&&(isset($_SESSION['userId']))
 {
 	$query = <<<END
 	SELECT * FROM supplierinvoices
