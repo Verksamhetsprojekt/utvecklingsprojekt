@@ -40,7 +40,7 @@ $mysqli->query($query);
 			$content = ' ';
 $query = <<<END
 SELECT * FROM article
-ORDER BY Description ASC
+ORDER BY ArticleNumber ASC
 END;
 
 

@@ -24,9 +24,8 @@ if($res->num_rows > 0)
 $row = $res->fetch_object();
 $content = <<<END
 <form method= "post" action="edit_gods.php?DocumentNumber={$row->Documentnumber}">
-<input type="text" name="name" value="{$row->name}">
-<input type="text" name="name" value="{$row->name}">
-<input type="text" name="name" value="{$row->name}">
+<input type="checkbox" name="Status" value="Hämtad">
+<input type="checkbox" name="Status" value="Utleveransarea">
 <input type="submit" value="Spara" </form>
 END;
 
@@ -34,7 +33,7 @@ END;
 
 	}
 //echo navigation;
-echo content;
+echo $content;
 ?>
 </div>
 </body>
