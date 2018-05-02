@@ -10,8 +10,14 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['ArticleNumber'])&&isset($_SESSION['userId']))
+
+			include('config.php');
+
+			if(isset($_GET['ArticleNumber'])/*&&isset($_SESSION['userId'])*/)
 {
+
+	echo apiCall('DELETE', 'articles/'.$_DELETE["ArticleNumber"].'');
+
 	$query = <<<END
 	DELETE FROM article
 	WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
@@ -19,6 +25,7 @@ END;
 $mysqli->query($query);
 echo '<span style="color:Red">Artikeln har raderats</span>';
 }
+
 			echo $content;
 			?>
 		</div>

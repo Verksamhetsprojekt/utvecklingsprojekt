@@ -42,7 +42,7 @@ END;
 $mysqli->query($query) or die($mysqli->error);
 }
 }
-			if(isset($_SESSION['userId'])) {
+		
      $content = ' ';
      $query = <<<END
      SELECT * FROM supplierinvoices
@@ -73,8 +73,8 @@ END;
 	    <td>{$row->PaidInFull}</td>
 END;
 }
-}
-}
+
+
 if(isset($_SESSION['userId']))
 {
 	$content .= <<<END
@@ -85,12 +85,7 @@ END;
 
 $content .= '</table>';
 
-
-
-			$content = <<<END
-<h1>Välkommen till HFAB</h1>
-<p>Här hittar du statistik för leverantörer samt ett internt lagerhanteringssystem</p>
-END;
+}
 			echo $content;
 			?>
 		</div>

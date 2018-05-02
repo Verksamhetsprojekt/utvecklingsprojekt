@@ -11,20 +11,28 @@
 		<div class="container text-center">
 			<?php
 
+			include('config.php');
+
 			$content = ' ';
 if(isset($_GET['ArticleNumber'])/*&&isset($_SESSION['userId'])*/)
 {
+
 	if(isset($_POST['Description']))
 	{
+		$body = '{"Article":{"Description":"'.$_POST['Description'].'","StockPlace":"'.$_POST['StockPlace'].'"}}';
+echo apiCall('PUT', 'articles/'.$_GET['ArticleNumber'].'', $body);
+
+
 		$query = <<<END
 		UPDATE article
 		SET Description = '{$_POST["Description"]}',
-		SalesPrice = '{$_POST["SalesPrice"]}',
 		StockPlace = '{$_POST["StockPlace"]}'
 		WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
-    $mysqli->query($query);
-	echo '<span style="color:Green">Ändringarna har lagts till</span>';}
+}
+
+$mysqli->query($query);
+echo '<span style="color:Green">Ändringarna har lagts till</span>';
 
 	
 	$query = <<<END
@@ -39,13 +47,13 @@ if($res->num_rows > 0)
 	$content = <<<END
 	<form method="post" action="edit_article.php?ArticleNumber={$row->ArticleNumber}">
     <input type="text" name="Description" value="{$row->Description}">
-    <input type="text" name="SalesPrice" value="{$row->SalesPrice}">
     <input type="text" name="StockPlace" value="{$row->StockPlace}">
     <input type="submit" Value="Spara">
     </form>
 END;
 }
 }
+
 			echo $content;
 			?>
 		</div>

@@ -46,26 +46,32 @@ $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
 	$content .= <<<END
+
 	<table class="table">
 	<tr>
 	    <th>Kundnamn</th>
 	    <th>Beställningsdatum</th>
 	    <th>Leveransdatum</th>
-	    <th>Skickat</th>
 	    <th>Totalt</th>
+	    <th>Hämtad</th>
+	    <th>Utleveransarea</th>
 	</tr>
 END;
 	while($row = $res->fetch_object())
 	{
 $content .= <<<END
-<th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
+
 <tr>
+	   <form method= "post" action="edit_gods.php?DocumentNumber={$row->Documentnumber}">
 <td>{$row->CustomerName}</td>
          <td>{$row->OrderDate}</td>
          <td>{$row->DeliveryDate}</td>
-         <td>{$row->Sent}</td>
          <td>{$row->Total}</td>
-         
+
+<th><input type="checkbox" name="Status" value="Hämtad"></th>
+<th><input type="checkbox" name="Status" value="Utleveransarea"></th>
+<th><input type="submit" value="Spara" </form></th>
+         <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
   </tr>
     
 END;
