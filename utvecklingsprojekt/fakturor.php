@@ -42,13 +42,13 @@ END;
 $mysqli->query($query) or die($mysqli->error);
 }
 }
-			if(isset($_SESSION['userId'])&&(isset($_SESSION['levId']))
-{
+			if(isset($_SESSION['userId'])) {
      $content = ' ';
      $query = <<<END
      SELECT * FROM supplierinvoices
      ORDER BY GivenNumber ASC
 END;
+
 
 $res = $mysqli->query($query);
 if($res->num_rows > 0)
@@ -85,13 +85,13 @@ END;
 
 $content .= '</table>';
 
-echo $content;
 
-			/*$content = <<<END
+
+			$content = <<<END
 <h1>Välkommen till HFAB</h1>
 <p>Här hittar du statistik för leverantörer samt ett internt lagerhanteringssystem</p>
 END;
-			echo $content;*/
+			echo $content;
 			?>
 		</div>
 	</body>
