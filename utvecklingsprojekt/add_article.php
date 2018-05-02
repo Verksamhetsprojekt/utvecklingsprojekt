@@ -28,17 +28,22 @@ $content = <<<END
   type="text"
         name="Description" required
         placeholder="Benämning"
-        title="Benämning krävs">
+        pattern="[A-Za-z]{1,32}"
+        title="Benämning krävs, endast vanliga bokstäver och beskrivningen får inte bestå av mer än 32 bokstäver">
+       
 <input
   type="text"
         name="SalesPrice" required
         placeholder="Pris"
-        title="Pris krävs">
+        pattern="\d{1,9}"      
+        title="Pris krävs, beloppet får inte bestå av mer än 9 siffror">
 <input
   type="text"
         name="StockPlace" required
         placeholder="Lagerplats"
-        title="Lagerplats krävs">
+        pattern="[^A-Za-z0-9]+"
+        title="Lagerplats krävs, får endast bestå av vanliga bokstäver och siffror och får inte ha mer än 32 tecken">
+        
 <input type="submit" Value="Lägg till artikel">
 </form>
 END;

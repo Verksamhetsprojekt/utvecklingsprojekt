@@ -56,12 +56,15 @@ $content = <<<END
   type="text"
         name="fname" required
         placeholder="Förnamn"
-        title="Förnamn krävs">
+        pattern="[A-Za-z]{1,32}"
+        title="Förnamn krävs, endast vanliga bokstäver och namnet får inte bestå av mer än 32 bokstäver">
   <input
   type="text"
         name="lname" required
         placeholder="Efternamn"
-        title="Efternamn krävs">
+        pattern="[A-Za-z]{1,32}"
+        title="Efternamn krävs, endast vanliga bokstäver och namnet får inte bestå av mer än 32 bokstäver">
+        
 <input type="submit" value="Registrera"></input>
 </form>
 

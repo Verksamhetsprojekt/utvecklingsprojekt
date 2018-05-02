@@ -47,7 +47,9 @@ $content = <<<END
   type="text"
         name="name" required
         placeholder="Namn"
-        title="Namn krävs">
+        pattern="[A-Za-z]{1,32}"
+        title="Namn krävs, endast vanliga bokstäver och namnet får inte bestå av mer än 32 bokstäver">
+        
 <input type="submit" value="Registrera"></input>
 </form>
 
