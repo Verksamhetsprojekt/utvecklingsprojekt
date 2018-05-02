@@ -41,11 +41,12 @@ END;
 $mysqli->query($query) or die($mysqli->error);
 }
 }
-
+if(isset($_SESSION['userId'])&&(isset($_SESSION['levId'])))
+{
      $content = ' ';
      $query = <<<END
      SELECT * FROM supplierinvoices
-     ORDER BY SupplierName ASC
+     ORDER BY GivenNumber ASC
 END;
 
 $res = $mysqli->query($query);
@@ -54,9 +55,9 @@ if($res->num_rows > 0)
 			$content .= <<<END
 	<table class="table">
 	<tr>
+	    <th>Fakturanr</th>
 	    <th>Leverantör</th>
 	    <th>Förfallodatum</th>
-	    <th>Totalt</th>
 	    <th>Betalt den:</th>
 	</tr>
 END;
@@ -65,16 +66,24 @@ END;
 
 			$content .= <<<END
 	<tr>
+	    <td>{$row->GivenNumber}</td>
 	    <td>{$row->SupplierName}</td>
 	    <td>{$row->DueDate}</td>
-	    <td>{$row->Total}</td>
 	    <td>{$row->PaidInFull}</td>
+END;
+}
+
+if(isset($_SESSION['userId']))
+{
+	$content .= <<<END
 	    <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
 END;
 }
+
 }
 
 $content .= '</table>';
+}
 echo $content;
 
 			/*$content = <<<END

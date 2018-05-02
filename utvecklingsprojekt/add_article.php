@@ -11,7 +11,22 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_POST['Description'])&&isset($_SESSION['userId']))
+
+			/*include('config.php');
+
+$query = <<<END
+SELECT * FROM article
+END;
+$result = $mysqli->query($query);
+if($result->num_rows > 0);
+{
+	while($row = $result->fetch_object())
+{
+		$body = '{"Article":{"Description":"'.$row->Description.'","StockPlace":"'.$row->StockPlace.'"}}';
+        echo apiCall('POST', 'articles', $body);
+    }
+}*/
+			if(isset($_POST['Description'])/*&&isset($_SESSION['userId'])*/)
 {
 	$query = <<<END
 	INSERT INTO article(Description,SalesPrice,StockPlace)
@@ -42,6 +57,7 @@ $content = <<<END
 <input type="submit" Value="Lägg till artikel">
 </form>
 END;
+
 			echo $content;
 			?>
 		</div>
@@ -50,7 +66,7 @@ END;
 
 	<footer class="footer container-fluid text-center bg-light">
 		<?php
-		include('footer.php');
+		//include('footer.php');
 		?>
 	</footer>
 
