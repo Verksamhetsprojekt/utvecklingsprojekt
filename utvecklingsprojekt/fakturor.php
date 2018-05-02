@@ -11,9 +11,6 @@
 		<div class="container text-center">
 			<?php
 
-			if(isset($_SESSION['userId'])&&(isset($_SESSION['levId']))
-{
-
 			include('config.php');
 
 
@@ -45,6 +42,8 @@ END;
 $mysqli->query($query) or die($mysqli->error);
 }
 }
+			if(isset($_SESSION['userId'])&&(isset($_SESSION['levId']))
+{
      $content = ' ';
      $query = <<<END
      SELECT * FROM supplierinvoices
