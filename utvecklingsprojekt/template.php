@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset?"utf-8">
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,13 +21,14 @@
  
 
 <?php
-
+header('Content-Type: text/html; charset=UTF-8');
 session_name('HFAB');
 session_start();
 ob_start();
 session_regenerate_id();
 
 $mysqli = new mysqli("localhost", "root", "root", "hfab");
+mysqli_set_charset($mysqli,"utf8");
 /*$username = "timhal16";
 $password = "l_CjusJpUi";
 $database = "timhal16_db";
