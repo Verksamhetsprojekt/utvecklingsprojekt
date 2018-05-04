@@ -23,7 +23,7 @@
 
 
 
-if(isset($_GET['search'])) {
+/*if(isset($_GET['search'])) {
 	$content .=<<<END
 <form action="articles.php" method="GET">
 <input type="text" name="query"/>
@@ -31,9 +31,9 @@ if(isset($_GET['search'])) {
 </form>
 END;
 
-	/*$searchq = $_GET['search']
-	$searchq = $preg_replace ("#[0-9a-z)#i","", $searchq);*/
-	$query = mysql_query("SELECT * FROM articles WHERE Description LIKE '%searchq%' OR ArticleNumber LIKE '%searchq%'") or die ("could not search!"); }
+	$searchq = $_GET['search']
+	$searchq = $preg_replace ("#[0-9a-z)#i","", $searchq);
+	$query = mysql_query("SELECT * FROM articles WHERE Description LIKE '%searchq%' OR ArticleNumber LIKE '%searchq%'") or die ("could not search!"); }  */
 
 
 include('config.php');
@@ -69,6 +69,14 @@ $mysqli->query($query);
 $query = <<<END
 SELECT * FROM article
 ORDER BY ArticleNumber ASC
+END;
+
+//sökfuntion här fungerar ej
+$content .= <<<END
+<form action="articles.php" method="GET">
+<input id="search" name="ArticleNumber" type="text" placeholder="Sök här...">
+<input id="submit" type="submit" value="Sök">
+</form>
 END;
 
 
