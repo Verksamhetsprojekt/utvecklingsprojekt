@@ -10,12 +10,9 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_SESSION['userId'])||(isset($_SESSION['levId']))) {
-					
-
-
-
 			include('config.php');
+if(isset($_SESSION['userId'])||(isset($_SESSION['levId'])))	{			
+	
 
 
 
@@ -78,23 +75,24 @@ END;
 	   
 END;
 
-}
-if(isset($_SESSION['userId']))
-{
+
+
+if(isset($_SESSION['userId'])) {
 	$content .= <<<END
 	 <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
-	 </tr>
+	 </tr> 
+
 
 END;
 }
-
 }
 
 $content .= '</table>';
 }
+}
 
-
-if(!isset($_SESSION['userId'])||(!isset($_SESSION['levId']))) {
+//if(!isset($_SESSION['userId'])||(!isset($_SESSION['levId'])))
+else {
 	
 header("refresh:0;url=login.php");
 

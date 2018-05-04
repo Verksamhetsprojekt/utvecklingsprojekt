@@ -7,15 +7,43 @@
 	echo $navigation;
 	?>
 
+
+
+
+
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body class="body">
 		<div class="container text-center">
-	
+
+
+
 			<?php
+
+
+
+
+
+if(isset($_GET['search'])) {
+	$content .=<<<END
+<form action="articles.php" method="GET">
+<input type="text" name="query"/>
+<input type="submit" value="Search"/>
+</form>
+END;
+
+	/*$searchq = $_GET['search']
+	$searchq = $preg_replace ("#[0-9a-z)#i","", $searchq);*/
+	$query = mysql_query("SELECT * FROM articles WHERE Description LIKE '%searchq%' OR ArticleNumber LIKE '%searchq%'") or die ("could not search!"); }
+
 
 include('config.php');
 
 $products = json_decode(apiCall('GET', 'articles'), true);
+
+
+
+
+
 
 //var_dump($products);
 //test
