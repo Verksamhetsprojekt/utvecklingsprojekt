@@ -30,13 +30,13 @@ $content = <<<END
         name="levname" required
         placeholder="Användarnamn"
         pattern="[a-z]{1,10}"
-        title="Användarnamnet ska endast bestå av små bokstäver exempelvis: john">
+        title="Användarnamnet ska endast bestå av små bokstäver och högst 10 tecken sammanlagt exempelvis: john123">
   <input
   type="text"
         name="password" required
         placeholder="Lösenord"
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
-        title="Lösenordet behöver bestå av minst 5 tecken, varav minst ett nummer och både stora och små bokstäver">
+        title="Lösenordet behöver bestå av minst 5 tecken, varav minst en siffra och både stora och små bokstäver">
   <input
   type="text"
         name="email" required
@@ -47,8 +47,8 @@ $content = <<<END
   type="text"
         name="name" required
         placeholder="Namn"
-        pattern="[A-Za-z]{1,32}"
-        title="Namn krävs, endast vanliga bokstäver och namnet får inte bestå av mer än 32 bokstäver">
+        pattern="[A-Za-z]{1,30}"
+        title="Namn krävs, endast bokstäver och inga andra tecken. Namnet får inte bestå av mer än 30 bokstäver">
         
 <input type="submit" value="Registrera"></input>
 </form>
