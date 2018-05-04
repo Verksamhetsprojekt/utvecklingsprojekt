@@ -59,6 +59,12 @@ if($res->num_rows > 0)
 END;
 	while($row = $res->fetch_object())
 	{
+
+
+//Lägg till utlevarea som attribut
+//Titta även i utlevarea om den finns där? 0 eller 1?
+//Använd jQuery för att checka checkboxen om värdet 1
+ 
 $content .= <<<END
 
 <tr>
@@ -67,17 +73,53 @@ $content .= <<<END
          <td>{$row->OrderDate}</td>
          <td>{$row->DeliveryDate}</td>
          <td>{$row->Total}</td>
-<th><input type="checkbox" name="Status" value="Hämtad"></th>
-<th><input type="checkbox" name="Status" value="Utleveransarea"></th>
-<th><input type="submit" value="Spara" selected="selected"</form></th>
+         <th><input type="checkbox" id="checkbox1"></th>
+         <th><input type="checkbox" id="checkbox2"></th>
          <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
   </tr>
-    
+
+
 END;
 
+}
+}
 
-}
-}
+
+echo  '<script type="text/javascript">
+$("#checkbox1").click(function(e){
+	if (e.target.checked) {
+  	$.utlevarea.checked = true;
+  } else {
+  	localStorage.checked = false;
+  }
+})
+ 
+$( document ).ready(function() {
+  
+	document.querySelector("#checkbox1").checked = $.utlevarea.checked
+  
+});
+</script>';
+
+
+
+/*echo  '<script type="text/javascript">
+$(document).ready(function() {
+    $("#checkbox1").val($(this).is(":checked"));
+    
+    $("#checkbox1").change(function() {
+        $("#checkbox1").val($(this).is(":checked"));
+    });
+
+    $("#checkbox1").click(function() {
+        if (!$(this).is(":checked")) {
+            return confirm("Är du säker?");
+        }
+    });
+});
+
+</script>';*/
+
 $content .= '</table>';
 echo $content;
 
