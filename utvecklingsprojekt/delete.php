@@ -15,8 +15,8 @@
 
 			if(isset($_GET['ArticleNumber'])/*&&isset($_SESSION['userId'])*/)
 {
-
-	echo apiCall('DELETE', 'articles/'.$_DELETE["ArticleNumber"].'');
+	echo $_GET["ArticleNumber"];
+	echo apiCall('DELETE', 'articles/'.$_GET["ArticleNumber"].'');
 
 	$query = <<<END
 	DELETE FROM article

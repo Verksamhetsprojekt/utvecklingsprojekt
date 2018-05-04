@@ -30,8 +30,8 @@ $mysqli->query($query);
 foreach($products['Articles'] as $article)
 {
 	$query = <<<END
-	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle)
-	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}')
+	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle,SupplierName)
+	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}','{$article["SupplierName"]}')
 END;
 $mysqli->query($query);
 }
@@ -53,6 +53,7 @@ if($res->num_rows > 0)
 	    <th>Artikelnummer</th>
 	    <th>Benämning</th>
 	    <th>Pris</th>
+	    <th>Leverantör</th>
 	</tr>
 END;
 	while($row = $res->fetch_object())
@@ -63,6 +64,7 @@ END;
 	    <td>{$row->ArticleNumber}</td>
 	    <td>{$row->Description}</td>
 	    <td>{$row->SalesPrice}</td>
+	    <td>{$row->SupplierName}</td>
 	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
 
 END;
@@ -84,7 +86,7 @@ END;
 			    
 			    $content .= <<<END
 			    <th><a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a></th>
-			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}="deletelink" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
+			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
 			    </tr>
 
 				
