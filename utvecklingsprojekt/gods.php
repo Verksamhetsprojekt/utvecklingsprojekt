@@ -67,10 +67,9 @@ $content .= <<<END
          <td>{$row->OrderDate}</td>
          <td>{$row->DeliveryDate}</td>
          <td>{$row->Total}</td>
-
 <th><input type="checkbox" name="Status" value="Hämtad"></th>
 <th><input type="checkbox" name="Status" value="Utleveransarea"></th>
-<th><input type="submit" value="Spara" </form></th>
+<th><input type="submit" value="Spara" selected="selected"</form></th>
          <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
   </tr>
     

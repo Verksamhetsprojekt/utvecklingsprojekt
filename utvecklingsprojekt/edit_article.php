@@ -48,6 +48,7 @@ if($res->num_rows > 0)
 	<form method="post" action="edit_article.php?ArticleNumber={$row->ArticleNumber}">
     <input type="text" name="Description" value="{$row->Description}">
     <input type="text" name="StockPlace" value="{$row->StockPlace}">
+    <input type="text" name="leverantor" value="{$row->leverantor}" placeholder="Leverantör">
     <input type="submit" Value="Spara">
     </form>
 END;
