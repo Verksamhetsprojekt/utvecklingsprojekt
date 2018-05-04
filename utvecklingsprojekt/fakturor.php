@@ -10,6 +10,10 @@
 	<body>
 		<div class="container text-center">
 			<?php
+			if(isset($_SESSION['userId'])||(isset($_SESSION['levId']))) {
+					
+
+
 
 			include('config.php');
 
@@ -71,22 +75,34 @@ END;
 	    <td>{$row->SupplierName}</td>
 	    <td>{$row->DueDate}</td>
 	    <td>{$row->PaidInFull}</td>
+	   
 END;
+
 }
-
-
 if(isset($_SESSION['userId']))
 {
 	$content .= <<<END
-	    <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
+	 <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
+	 </tr>
+
 END;
 }
 
+}
 
 $content .= '</table>';
-
 }
-			echo $content;
+
+
+if(!isset($_SESSION['userId'])||(!isset($_SESSION['levId']))) {
+	
+header("refresh:0;url=login.php");
+
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+}
+	echo $content;
 			?>
 		</div>
 	</body>

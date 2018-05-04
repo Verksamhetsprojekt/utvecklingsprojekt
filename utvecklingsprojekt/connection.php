@@ -5,7 +5,7 @@ session_start();
 ob_start();
 session_regenerate_id();
 
-$mysqli = new mysqli("localhost", "root", "root", "hfab");
+$mysqli = new mysqli("localhost", "root", "root", "hfabnew");
 /*$username = "timhal16";
 $password = "l_CjusJpUi";
 $database = "timhal16_db";
