@@ -29,10 +29,11 @@ echo apiCall('PUT', 'articles/'.$_GET['ArticleNumber'].'', $body);
 		StockPlace = '{$_POST["StockPlace"]}'
 		WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
+echo '<span style="color:Green">Ändringarna har lagts till</span>';
 }
 
 $mysqli->query($query);
-echo '<span style="color:Green">Ändringarna har lagts till</span>';
+
 
 	
 	$query = <<<END
