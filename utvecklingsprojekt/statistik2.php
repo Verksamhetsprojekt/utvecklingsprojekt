@@ -16,7 +16,8 @@
 <!-- Nedanför är kod för Google Charts-API-->
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a><hr>
+<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
+<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr><hr>
     <button onclick="drawChart('ColumnChart')" class="btn btn-default">Column chart</button>
 <button onclick="drawChart('PieChart')" class="btn btn-default">Pie Chart</button>
 <button onclick="drawChart('BarChart')" class="btn btn.default">Bar chart</button>
@@ -41,7 +42,6 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'SupplierName');
         data.addColumn('number', 'Total');
-        data.addColumn('date', 'DueDate')
         /*data.addRows([
           ['Mushrooms', 3],
           ['Onions', 1],
@@ -55,7 +55,8 @@
 
           if($mysqli){
 $query = <<<END
-SELECT Total, DueDate SupplierName FROM supplierinvoices GROUP BY SupplierName
+SELECT SupplierName, Total FROM supplierinvoices
+GROUP BY SupplierName
 END;
 
 $res = $mysqli->query($query);
@@ -63,7 +64,7 @@ if($res->num_rows > 0)
 {
   while($row = $res->fetch_object())
   {
-    echo 'data.addRow(["'.$row->SupplierName.'",'.$row->Total.','.$row->DueDate.'])';
+    echo 'data.addRow(["'.$row->SupplierName.'",'.$row->Total.']);';
   }
         
           /*while( $obj = ( $result )) {
@@ -76,10 +77,11 @@ if($res->num_rows > 0)
           ?>
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Försäljningsstatistik',
                        'width':1000,
-                       'height':600
-                       };
+                       'height':600,
+                       'bar': {groupWidth: "95%"},
+        'legend': { position: "none" }};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ChartWrapper({containerId:'chart_div'});
