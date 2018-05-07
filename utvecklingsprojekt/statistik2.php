@@ -51,7 +51,8 @@
 
         ]); */
 
-        <?php
+        <?php 
+        if(isset($_SESSION['levId'])) {
 
           if($mysqli){
 $query = <<<END
@@ -74,6 +75,7 @@ if($res->num_rows > 0)
           }*/
         }
     }
+  }
           ?>
 
         // Set chart options
@@ -94,14 +96,15 @@ if($res->num_rows > 0)
     <!-- GoogleCharts-kod slut-->
 
         <?php
+         if(isset($_SESSION['levId'])) {
         $content = <<<END
         
         <div id="chart_div"></div>
 END;
-
-if(!isset($_SESSION['userslev'])) { //(!isset) betyder att det INTE är set
+}
+if(!isset($_SESSION['levId'])) { //(!isset) betyder att det INTE är set
 header("refresh:0;url=login.php");
- echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+ //echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
 
 exit;
 }

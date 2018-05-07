@@ -67,6 +67,16 @@ type="text"
 </form>
 END;
 
+if(!isset($_SESSION['userId'])) {
+	
+header("refresh:0;url=login.php");
+
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+
+}
+
 			echo $content;
 			?>
 		</div>

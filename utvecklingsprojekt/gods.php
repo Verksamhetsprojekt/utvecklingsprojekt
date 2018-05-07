@@ -12,7 +12,18 @@
 		<div class="container text-center">
 			<?php
 
+
 include('config.php');
+
+if(!isset($_SESSION['userId'])) {
+	
+header("refresh:0;url=login.php");
+
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+
+}
 
 $order = json_decode(apiCall('GET', 'orders'), true);
 
