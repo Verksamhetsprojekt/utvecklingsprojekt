@@ -11,9 +11,7 @@
 			<h1>Välkommen till Hellströms Fordonsteknik AB</h1>
 			<h6><i>Din specialistpartner sedan 1967</i></h6><hr>
 		</div>
-		<?php
-		echo $navigation;
-		?>
+		
 	</header>
 
 <style>

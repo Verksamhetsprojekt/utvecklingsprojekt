@@ -20,9 +20,9 @@
 
 <!-- Sökruta -->
 
-<form name="form1" method="post" action="statistik3.php">
+<form method="GET" action="searchStatistik.php">
       <input  type="text" name="Search" placeholder="Sök här...">
-      <input  type="submit" name="Submit" value="Submit">
+      <input  type="submit" name="Submit" placeholder="Submit">
     </form>
 
 <!-- Sökruta -->
