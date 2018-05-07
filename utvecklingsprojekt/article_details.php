@@ -28,7 +28,8 @@ if($res->num_rows > 0)
 	Benämning: {$row->Description}<br>
 	Pris: {$row->SalesPrice}<br>
 	Lagerplats: {$row->StockPlace}<br>
-	Antal i lager: {$row->QuantityInStock}
+	Antal i lager: {$row->QuantityInStock}<br>
+	Leverantör: {$row->SupplierName}
 	</form>
 END;
 }

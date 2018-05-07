@@ -20,13 +20,14 @@ if(isset($_GET['ArticleNumber'])/*&&isset($_SESSION['userId'])*/)
 	if(isset($_POST['Description']))
 	{
 		$body = '{"Article":{"Description":"'.$_POST['Description'].'","StockPlace":"'.$_POST['StockPlace'].'"}}';
-echo apiCall('PUT', 'articles/'.$_GET['ArticleNumber'].'', $body);
+        apiCall('PUT', 'articles/'.$_GET['ArticleNumber'].'', $body);
 
 
 		$query = <<<END
 		UPDATE article
 		SET Description = '{$_POST["Description"]}',
-		StockPlace = '{$_POST["StockPlace"]}'
+		StockPlace = '{$_POST["StockPlace"]}',
+		SupplierName = '{$_POST["SupplierName"]}'
 		WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'
 END;
 echo '<span style="color:Green">Ändringarna har lagts till</span>';
@@ -49,7 +50,7 @@ if($res->num_rows > 0)
 	<form method="post" action="edit_article.php?ArticleNumber={$row->ArticleNumber}">
     <input type="text" name="Description" value="{$row->Description}">
     <input type="text" name="StockPlace" value="{$row->StockPlace}">
-    <input type="text" name="leverantor" value="{$row->leverantor}" placeholder="Leverantör">
+    <input type="text" name="SupplierName" value="{$row->SupplierName}" placeholder="Leverantör">
     <input type="submit" Value="Spara">
     </form>
 END;
