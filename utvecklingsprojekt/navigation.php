@@ -36,8 +36,11 @@ if(isset($_SESSION['userId']))
     </li>';
  $navigation .= '
     <li class="nav-item">
-    <a class="nav-link" href="gods.php">Se ordrar</a>
-    </li>';  
+    <a class="nav-link" href="gods.php">Se kundordrar</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="fakturor.php">Se leverantörsfakturor</a>
+    </li>';
    $navigation .= '
   
   <li class="nav-item">
@@ -55,7 +58,8 @@ else if(isset($_SESSION['levId']))
         Se statistik</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="statistik.php">Försäljning över tid</a>
-        <a class="dropdown-item" href="statistik2.php">Försäljning per leverantör</a>
+        <a class="dropdown-item" href="statistik2.php">Försäljning och totala leveranser per leverantör</a>
+        <a class="dropdown-item" href="statistik3.php">Antal artiklar i lager</a>
         </div>
     </li>';
   $navigation .= '
@@ -63,11 +67,7 @@ else if(isset($_SESSION['levId']))
   <li class="nav-item">
     <a class="nav-link" href="fakturor.php">Se fakturor</a>
     </li>';
-  $navigation .= '
-
-  <li class="nav-item">
-    <a class="nav-link" href="leveranser.php">Se leveranser</a>
-    </li>';  
+  
   $navigation .= '
   
   <li class="nav-item">
