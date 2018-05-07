@@ -109,7 +109,7 @@ END;
 	    <td>{$row->ArticleNumber}</td>
 	    <td>{$row->Description}</td>
 	    <td>{$row->SalesPrice}</td>
-	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
+	   
 
 END;
 
@@ -125,10 +125,11 @@ END;
 
 */
 
-		//if(isset($_SESSION['userId']))
+		if(isset($_SESSION['userId']))
 		{
 			    
 			    $content .= <<<END
+			    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
 			    <th><a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a></th>
 			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
 			    </tr>

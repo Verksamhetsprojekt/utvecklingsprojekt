@@ -13,7 +13,7 @@
 
 			include('config.php');
 
-			if(isset($_GET['ArticleNumber'])/*&&isset($_SESSION['userId'])*/)
+			if(isset($_GET['ArticleNumber'])&&(isset($_SESSION['userId'])))
 {
 	echo $_GET["ArticleNumber"];
 	echo apiCall('DELETE', 'articles/'.$_GET["ArticleNumber"].'');

@@ -69,6 +69,8 @@ exit;
 
 }
 			echo $content;
+
+		
 			?>
 		</div>
 	</body>

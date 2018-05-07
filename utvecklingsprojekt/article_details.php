@@ -11,7 +11,7 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['ArticleNumber']))
+			if(isset($_GET['ArticleNumber'])&&(isset($_SESSION['userId'])))
 {
 	$query = <<<END
 	SELECT * FROM article
