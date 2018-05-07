@@ -31,6 +31,7 @@ if($result->num_rows > 0);
 
 		$body = '{"Article":{"Description":"'.$_POST['Description'].'","StockPlace":"'.$_POST['StockPlace'].'"}}';
         apiCall('POST', 'articles', $body);
+        echo '<span style="color:Green">Artikel har lagts till</span>';
     }
 
 {
@@ -39,9 +40,10 @@ if($result->num_rows > 0);
 	INSERT INTO article(Description,StockPlace)
 	VALUES('{$_POST['Description']}','{$_POST['StockPlace']}')
 END;
+
 }
 $mysqli->query($query);
-echo '<span style="color:Green">Artikel har lagts till</span>';
+
 
 
 $content = <<<END

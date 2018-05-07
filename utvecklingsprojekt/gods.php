@@ -21,7 +21,9 @@ $order = json_decode(apiCall('GET', 'orders'), true);
 if(count($order) > 0)
 {
 	$query = <<<END
-	DELETE FROM orders
+    UPDATE orders
+    SET Cancelled = null, Currency = null, CustomerName = null, CustomerNumber = null, DelvieryDate = null, DocumentNumber = null, ExternalInvoiceReference = null, OrderDate = null, Project = null, Sent = null, Total = null
+	
 END;
 $mysqli->query($query);
 
@@ -37,6 +39,14 @@ $mysqli->query($query);
 
 
 			$content = ' ';
+if(isset($_POST['utlevarea']))
+{
+$query = <<<END
+INSERT INTO orders(utlevarea,hamtad)
+VALUES('{$_POST['utlevarea']}','{$_POST['hamtad']}')
+END;
+}
+
 $query = <<<END
 SELECT * FROM orders
 ORDER BY CustomerName ASC
@@ -53,28 +63,24 @@ if($res->num_rows > 0)
 	    <th>Beställningsdatum</th>
 	    <th>Leveransdatum</th>
 	    <th>Totalt</th>
-	    <th>Hämtad</th>
 	    <th>Utleveransarea</th>
+	    <th>Hämtad</th>
 	</tr>
 END;
 	while($row = $res->fetch_object())
 	{
 
-
-//Lägg till utlevarea som attribut
-//Titta även i utlevarea om den finns där? 0 eller 1?
-//Använd jQuery för att checka checkboxen om värdet 1
  
 $content .= <<<END
 
 <tr>
-	   <form method= "post" action="edit_gods.php?DocumentNumber={$row->Documentnumber}">
-<td>{$row->CustomerName}</td>
+	   
+         <td>{$row->CustomerName}</td>
          <td>{$row->OrderDate}</td>
          <td>{$row->DeliveryDate}</td>
          <td>{$row->Total}</td>
-         <th><input type="checkbox" id="checkbox1"></th>
-         <th><input type="checkbox" id="checkbox2"></th>
+         <td>{$row->utlevarea}</td>
+         <td>{$row->hamtad}</td>
          <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
   </tr>
 
@@ -85,52 +91,10 @@ END;
 }
 
 
-echo  '<script type="text/javascript">
-$("#checkbox1").click(function(e){
-	if (e.target.checked) {
-  	$.utlevarea.checked = true;
-  } else {
-  	localStorage.checked = false;
-  }
-})
- 
-$( document ).ready(function() {
-  
-	document.querySelector("#checkbox1").checked = $.utlevarea.checked
-  
-});
-</script>';
-
-
-
-/*echo  '<script type="text/javascript">
-$(document).ready(function() {
-    $("#checkbox1").val($(this).is(":checked"));
-    
-    $("#checkbox1").change(function() {
-        $("#checkbox1").val($(this).is(":checked"));
-    });
-
-    $("#checkbox1").click(function() {
-        if (!$(this).is(":checked")) {
-            return confirm("Är du säker?");
-        }
-    });
-});
-
-</script>';*/
-
 $content .= '</table>';
 echo $content;
 
 
-
-
-			/*$content = <<<END
-<h1>Välkommen till HFAB</h1>
-<p>Här hanteras gods och lager</p>
-END;
-			echo $content;*/
 			?>
 		</div>
 	</body>
