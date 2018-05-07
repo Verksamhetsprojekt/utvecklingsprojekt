@@ -26,7 +26,7 @@ if($result->num_rows > 0);
         echo apiCall('POST', 'articles', $body);
     }
 }*/
-			if(isset($_POST['Description'])/*&&isset($_SESSION['userId'])*/)
+			if(isset($_POST['Description'])&&isset($_SESSION['userId']))
 {
 
 		$body = '{"Article":{"Description":"'.$_POST['Description'].'","StockPlace":"'.$_POST['StockPlace'].'"}}';
@@ -37,8 +37,8 @@ if($result->num_rows > 0);
 {
 
 	$query = <<<END
-	INSERT INTO article(Description,StockPlace)
-	VALUES('{$_POST['Description']}','{$_POST['StockPlace']}')
+	INSERT INTO article(Description,StockPlace,SupplierName)
+	VALUES('{$_POST['Description']}','{$_POST['StockPlace']}','{$_POST['SupplierName']}')
 END;
 
 }
@@ -53,15 +53,23 @@ type="text"
         name="Description" required
         placeholder="Benämning"
         pattern="[A-Za-z]{1,32}"
-        title="Benämning krävs, endast vanliga bokstäver och beskrivningen får inte bestå av mer än 32 bokstäver">
+        title="Benämning krävs, endast vanliga bokstäver och beskrivningen får inte bestå av mer än 32 bokstäver. Inga ÅÄÖ.">
        
 
 <input
   type="text"
         name="StockPlace" required
         placeholder="Lagerplats"
-        pattern="[^A-Za-z0-9]+"
-        title="Lagerplats krävs, får endast bestå av vanliga bokstäver och siffror och får inte ha mer än 32 tecken">
+        pattern="([A-Za-z0-9]+){1,32}"
+        title="Lagerplats krävs, får endast bestå av vanliga bokstäver och siffror och får inte ha mer än 32 tecken. Inga ÅÄÖ.">
+<input 
+type="text"
+        name="SupplierName" required
+        placeholder="Leverantör"
+        pattern="[A-Za-z]{1,32}"
+        title="Leverantör krävs, endast vanliga bokstäver och beskrivningen får inte bestå av mer än 32 bokstäver. Inga ÅÄÖ.">
+       
+
         
 <input type="submit" Value="Lägg till artikel">
 </form>
@@ -71,10 +79,8 @@ if(!isset($_SESSION['userId'])) {
 	
 header("refresh:0;url=login.php");
 
- echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
-
+echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
 exit;
-
 }
 
 			echo $content;

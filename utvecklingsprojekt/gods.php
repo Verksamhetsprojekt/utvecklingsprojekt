@@ -31,11 +31,14 @@ $order = json_decode(apiCall('GET', 'orders'), true);
 
 if(count($order) > 0)
 {
+
 	$query = <<<END
-    UPDATE orders
-    SET Cancelled = null, Currency = null, CustomerName = null, CustomerNumber = null, DelvieryDate = null, DocumentNumber = null, ExternalInvoiceReference = null, OrderDate = null, Project = null, Sent = null, Total = null
-	
+	DELETE FROM orders
 END;
+	/*$query = <<<END
+    UPDATE orders
+    SET Cancelled = null, Currency = null, CustomerName = null, CustomerNumber = null, DeliveryDate = null, DocumentNumber = null, ExternalInvoiceReference = null, OrderDate = null, Project = null, Sent = null, Total = null
+END;*/
 $mysqli->query($query);
 
 foreach($order['Orders'] as $orders)
@@ -92,7 +95,7 @@ $content .= <<<END
          <td>{$row->Total}</td>
          <td>{$row->utlevarea}</td>
          <td>{$row->hamtad}</td>
-         <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera artikel</a></th>
+         <th><a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera order</a></th>
   </tr>
 
 

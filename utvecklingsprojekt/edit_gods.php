@@ -10,7 +10,7 @@
 <body>
 	<div class="container text-center">
 			<?php
-//include('config.php');
+include('config.php');
 
 	$content = ' ';
 

@@ -28,10 +28,11 @@
 <!-- Sökruta -->
 
            <?php
+            if(isset($_SESSION['levId'])) {
             $content = " ";
           if($mysqli){
 $query = <<<END
-SELECT ArticleNumber, Description, QuantityInStock FROM article GROUP BY Description
+SELECT ArticleNumber, Description, QuantityInStock FROM article GROUP BY ArticleNumber
 END;
 }
 $res = $mysqli->query($query);
@@ -60,6 +61,7 @@ END;
 }
 }
     $content .= '</table>';
+  }
           ?>
     		<?php
 
