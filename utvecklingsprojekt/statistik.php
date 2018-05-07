@@ -98,7 +98,16 @@ if($res->num_rows > 0)
     		<div id="chart_div"></div>
 END;
 
+<<<<<<< HEAD
 
+=======
+/*if(!isset($_SESSION['levId'])) { //(!isset) betyder att det INTE är set
+header("refresh:0;url=http://localhost/loginlev.php");
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+} */
+>>>>>>> 85ace3a33fe68367ee10500312cc51a430941162
 			echo $content;
 			?>
 		</div>

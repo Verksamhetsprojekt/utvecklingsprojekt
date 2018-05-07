@@ -12,7 +12,11 @@
 		<div class="container text-center">
 			<?php
 			$content = <<<END
-			<h2>Detta är startsidan</h2>
+			<h2>Välkommen till HFAB!</h2>
+			<p>Hej och välkommen till Hellströms Fordonsteknik AB.</p>
+			<p>Som anställd hos oss kan du här utföra viktiga arbetsrelaterade uppgifter och hålla dig uppdaterad kring bland annat våra artiklar, kundordrar och leverantörsfakturor!</p>
+			<p>Är ni en av våra underleverantörer kan ni här följa upp fakturor och även se intressant statistik om era ärenden hos HFAB!</p>
+			<p>Vänligen logga in för att se mer!</p>
 END;
 			echo $content;
 			?>

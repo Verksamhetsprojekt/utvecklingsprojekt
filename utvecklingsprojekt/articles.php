@@ -51,21 +51,31 @@ $products = json_decode(apiCall('GET', 'articles'), true);
 if(count($products) > 0)
 {
 	$query = <<<END
-	DELETE FROM article
+	UPDATE article
+    SET ArticleNumber = null, Description = null, DisposableQuantity = null, EAN = null, Housework = null, PurchasePrice = null, SalesPrice = null, QuantityInStock = null, ReservedQuantity = null, StockPlace = null, StockValue = null, Unit = null, VAT = null, WebShopArticle = null
 END;
 $mysqli->query($query);
 
 foreach($products['Articles'] as $article)
 {
 	$query = <<<END
-	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle,SupplierName)
-	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}','{$article["SupplierName"]}')
+	INSERT INTO article(ArticleNumber,Description,DisposableQuantity,EAN,Housework,PurchasePrice,SalesPrice,QuantityInStock,ReservedQuantity,StockPlace,StockValue,Unit,VAT,WebshopArticle)
+	VALUES('{$article["ArticleNumber"]}','{$article["Description"]}','{$article["DisposableQuantity"]}','{$article["EAN"]}','{$article["Housework"]}','{$article["PurchasePrice"]}','{$article["SalesPrice"]}','{$article["QuantityInStock"]}','{$article["ReservedQuantity"]}','{$article["StockPlace"]}','{$article["StockValue"]}','{$article["Unit"]}','{$article["VAT"]}','{$article["WebshopArticle"]}')
 END;
+
 $mysqli->query($query);
 }
 }
 
 			$content = ' ';
+if(isset($_POST['SupplierName']))
+{
+$query = <<<END
+INSERT INTO article(SupplierName)
+VALUES('{$_POST['SupplierName']}')
+END;
+}
+
 $query = <<<END
 SELECT * FROM article
 ORDER BY ArticleNumber ASC
@@ -89,7 +99,6 @@ if($res->num_rows > 0)
 	    <th>Artikelnummer</th>
 	    <th>Benämning</th>
 	    <th>Pris</th>
-	    <th>Leverantör</th>
 	</tr>
 END;
 	while($row = $res->fetch_object())
@@ -100,8 +109,7 @@ END;
 	    <td>{$row->ArticleNumber}</td>
 	    <td>{$row->Description}</td>
 	    <td>{$row->SalesPrice}</td>
-	    <td>{$row->SupplierName}</td>
-	    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
+	   
 
 END;
 
@@ -117,10 +125,11 @@ END;
 
 */
 
-		//if(isset($_SESSION['userId']))
+		if(isset($_SESSION['userId']))
 		{
 			    
 			    $content .= <<<END
+			    <th><a href="article_details.php?ArticleNumber={$row->ArticleNumber}">Läs mer</a></th>
 			    <th><a href="edit_article.php?ArticleNumber={$row->ArticleNumber}">Redigera artikel</a></th>
 			    <th><a href="delete.php?ArticleNumber={$row->ArticleNumber}" onclick="return confirm('Är du säker på att du vill radera artikeln?')">Radera artikel</a></th>
 			    </tr>

@@ -11,7 +11,7 @@
 	<body>
 		<div class="container text-center">
 			<?php
-			if(isset($_GET['ArticleNumber']))
+			if(isset($_GET['ArticleNumber'])&&(isset($_SESSION['userId'])))
 {
 	$query = <<<END
 	SELECT * FROM article
@@ -28,7 +28,8 @@ if($res->num_rows > 0)
 	Benämning: {$row->Description}<br>
 	Pris: {$row->SalesPrice}<br>
 	Lagerplats: {$row->StockPlace}<br>
-	Antal i lager: {$row->QuantityInStock}
+	Antal i lager: {$row->QuantityInStock}<br>
+	Leverantör: {$row->SupplierName}
 	</form>
 END;
 }
