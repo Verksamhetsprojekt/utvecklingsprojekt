@@ -96,6 +96,14 @@ if($res->num_rows > 0)
         
         <div id="chart_div"></div>
 END;
+
+if(!isset($_SESSION['userslev'])) { //(!isset) betyder att det INTE är set
+header("refresh:0;url=login.php");
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+}
+  
       echo $content;
       ?>
     </div>
