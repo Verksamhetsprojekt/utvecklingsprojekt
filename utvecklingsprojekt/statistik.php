@@ -16,9 +16,9 @@
 <!-- Nedanför är kod för Google Charts-API-->
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a><hr>
+<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
+<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr><hr>
     <button onclick="drawChart('ColumnChart')" class="btn btn-default">Column chart</button>
-<button onclick="drawChart('PieChart')" class="btn btn-default">Pie Chart</button>
 <button onclick="drawChart('BarChart')" class="btn btn.default">Bar chart</button>
 <button onclick="drawChart('Table')" class="btn btn-default">Table</button>
 <br>&nbsp;<br>
