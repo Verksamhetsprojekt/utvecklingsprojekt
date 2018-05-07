@@ -96,18 +96,18 @@ if($res->num_rows > 0)
     <!-- GoogleCharts-kod slut-->
 
         <?php
-<<<<<<< HEAD
+
         
-=======
+
          if(isset($_SESSION['levId'])) {
->>>>>>> 85ace3a33fe68367ee10500312cc51a430941162
+
         $content = <<<END
         
         <div id="chart_div"></div>
 END;
-<<<<<<< HEAD
 
-=======
+
+
 }
 /*if(!isset($_SESSION['levId'])) { //(!isset) betyder att det INTE är set
 header("refresh:0;url=login.php");
@@ -115,7 +115,7 @@ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen l
 
 exit;
 } */
->>>>>>> 85ace3a33fe68367ee10500312cc51a430941162
+
   
       echo $content;
       ?>
