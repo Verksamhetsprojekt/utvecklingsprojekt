@@ -14,7 +14,7 @@
 			include('config.php');
 
 			$content = ' ';
-if(isset($_GET['ArticleNumber'])&&isset($_SESSION['userId'])))
+if(isset($_GET['ArticleNumber'])&&isset($_SESSION['userId']))
 {
 
 	if(isset($_POST['Description']))

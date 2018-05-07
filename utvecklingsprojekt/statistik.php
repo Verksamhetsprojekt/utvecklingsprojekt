@@ -50,7 +50,6 @@
 
         ]); */
 
-        <?php
 
           if($mysqli){
 $query = <<<END
@@ -73,6 +72,7 @@ if($res->num_rows > 0)
           }*/
         }
     }
+
           ?>
 
         // Set chart options
@@ -99,12 +99,12 @@ if($res->num_rows > 0)
 END;
 
 
-/*if(!isset($_SESSION['levId'])) { //(!isset) betyder att det INTE är set
-header("refresh:0;url=http://localhost/loginlev.php");
+if(!isset($_SESSION['levId'])) { //(!isset) betyder att det INTE är set
+header("refresh:0;url=loginlev.php");
  echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
 
 exit;
-} */
+} 
 
 			echo $content;
 			?>
