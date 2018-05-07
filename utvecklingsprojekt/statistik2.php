@@ -11,12 +11,12 @@
   <body>
     <div class="container text-center">
       <h2>Statistik</h2><br>
-      <h4><i>Försäljning per leverantör</i></h4>
+      <h4><i>Försäljning och totala leveranser per leverantör</i></h4>
       
 <!-- Nedanför är kod för Google Charts-API-->
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
+<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
 <a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr><hr>
     <button onclick="drawChart('ColumnChart')" class="btn btn-default">Column chart</button>
 <button onclick="drawChart('PieChart')" class="btn btn-default">Pie Chart</button>
@@ -51,7 +51,8 @@
 
         ]); */
 
-        <?php
+        <?php 
+        if(isset($_SESSION['levId'])) {
 
           if($mysqli){
 $query = <<<END
@@ -74,6 +75,7 @@ if($res->num_rows > 0)
           }*/
         }
     }
+  }
           ?>
 
         // Set chart options
@@ -94,17 +96,12 @@ if($res->num_rows > 0)
     <!-- GoogleCharts-kod slut-->
 
         <?php
+        
         $content = <<<END
         
         <div id="chart_div"></div>
 END;
 
-if(!isset($_SESSION['userslev'])) { //(!isset) betyder att det INTE är set
-header("refresh:0;url=login.php");
- echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
-
-exit;
-}
   
       echo $content;
       ?>
