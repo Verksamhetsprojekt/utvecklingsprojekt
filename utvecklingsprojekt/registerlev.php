@@ -19,7 +19,6 @@
 	'{$_POST["name"]}')
 END;
 $mysqli->query($query);
-echo'<script type="text/javascript">alert("Har du fyllt i alla uppgifter?");</script>';
 echo '<span style="color:Green">En ny användare har lagts till</span>';
 }
 
@@ -49,8 +48,10 @@ $content = <<<END
         placeholder="Namn"
         pattern="[A-Za-z]{1,30}"
         title="Namn krävs, endast bokstäver och inga andra tecken. Namnet får inte bestå av mer än 30 bokstäver. Inga ÅÄÖ.">
-        
-<input type="submit" value="Registrera"></input>
+       
+ <input type="submit" value="Registrera" onclick="return confirm('Stämmer uppgifterna?')"></th>
+          </tr></input>
+
 </form>
 
 
