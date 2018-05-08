@@ -9,6 +9,11 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
+
+			<form method="GET" action="searchFakturor.php">
+      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="submit" name="Submit" placeholder="Submit">
+    </form>
 			<?php
 			include('config.php');
 if(isset($_SESSION['userId'])||(isset($_SESSION['levId'])))	{			
@@ -59,8 +64,10 @@ if($res->num_rows > 0)
 	<tr>
 	    <th>Fakturanr</th>
 	    <th>Leverantör</th>
+	    <th>Totalsumma</th>
+	    <th>Fakturadatum</th>
 	    <th>Förfallodatum</th>
-	    <th>Betalt den:</th>
+	    <th>Betaldatum: <small><i>(0000-00-00 = OBETALD)</i></small></th>
 	</tr>
 END;
 	while($row = $res->fetch_object())
@@ -70,6 +77,8 @@ END;
 	<tr>
 	    <td>{$row->GivenNumber}</td>
 	    <td>{$row->SupplierName}</td>
+	    <td>{$row->Total}</td>
+	    <td>{$row->InvoiceDate}</td>
 	    <td>{$row->DueDate}</td>
 	    <td>{$row->PaidInFull}</td>
 	   

@@ -10,41 +10,34 @@
 
 	<body>
 	<div class="container text-center">
-      <h2>Statistik</h2><br>
-      <h4><i>Antal artiklar i lager</i></h4>
-
-
-		<a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-		<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
-		<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr>
-
-
+      <h2>Sökresultat</h2><br>
+		<a href="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
+		
 		<?php
-          
-          if(isset($_SESSION['userId'])||(isset($_SESSION['levId'])))	{	
+if(isset($_SESSION['userId'])||(isset($_SESSION['levId'])))	{
 
 if(!isset($_GET['Search'])) {
-		header("Location:statistik3.php");
+		header("Location:fakturor.php");
 	}
 
-
-
 $query= <<<END
-SELECT * FROM article WHERE Description LIKE '%{$_GET['Search']}%' OR ArticleNumber LIKE '%{$_GET['Search']}%'
+SELECT * FROM supplierinvoices WHERE SupplierName LIKE '%{$_GET['Search']}%' OR GivenNumber LIKE '%{$_GET['Search']}%'
 END;
 
 $res = $mysqli->query($query) or die($mysqli->error);
 if($res->num_rows > 0) {
 	while($row = $res->fetch_object()) {
 		$content .= <<<END
-		Artikelnummer: {$row->ArticleNumber}<br>
-		Beskrivning: {$row->Description}<br>
-		Antal i lager: {$row->QuantityInStock}
+		Leverantörsnamn: {$row->SupplierName}<br>
+		Fakturanummer: {$row->GivenNumber}<br>
+		Totalsumma: {$row->Total}<br>
+		Beställningsdatum: {$row->InvoiceDate}<br>
+		Leveransdatum: {$row->DueDate}<br>
+		Betaldatum: <small><i>(0000-00-00 = OBETALD)</i></small> {$row->PaidInFull}<br>
 		<hr>
 END;
 	}
 }
-
 
 }else {
 	
@@ -54,6 +47,7 @@ header("refresh:0;url=login.php");
 
 exit;
 }
+
 ?>
 <?php 
 
