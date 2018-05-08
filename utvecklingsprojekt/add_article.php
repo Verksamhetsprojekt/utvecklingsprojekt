@@ -52,8 +52,8 @@ $content = <<<END
 type="text"
         name="Description" required
         placeholder="Benämning"
-        pattern="[A-Za-z]{1,32}"
-        title="Benämning krävs, endast vanliga bokstäver och beskrivningen får inte bestå av mer än 32 bokstäver. Inga ÅÄÖ.">
+        pattern="([A-Za-z0-9]+){1,32}"
+        title="Benämning krävs, endast vanliga bokstäver och siffror, och beskrivningen får inte bestå av mer än 32 tecken. Inga ÅÄÖ.">
        
 
 <input
