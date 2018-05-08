@@ -24,7 +24,7 @@ if($res->num_rows > 0)
 	$row = $res->fetch_object();
 	$content .= <<<END
 	<form method="get" action="fakturaspec.php">
-	Fakturanr: {$row->InvoiceNumber}<br>
+	Fakturanr: {$row->GivenNumber}<br>
 	Leverantörsnr: {$row->SupplierNumber}<br>
 	Leverantör: {$row->SupplierName}<br>
 	Fakturadatum: {$row->InvoiceDate}<br>
