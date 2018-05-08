@@ -14,8 +14,13 @@ include('config.php');
 
 	$content = ' ';
 
+
+
+
 if(isset($_GET['DocumentNumber'])&&isset($_SESSION['userId']))
 {
+
+
 	if(isset($_POST['utlevarea']))
 	{
 
