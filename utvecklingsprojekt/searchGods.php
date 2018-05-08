@@ -11,7 +11,7 @@
 	<body>
 	<div class="container text-center">
       <h2>Sökresultat</h2><br>
-		<a href="articles.php" class="btn btn-default">Tillbaka</a><hr>
+		<a href="gods.php" class="btn btn-default">Tillbaka</a><hr>
 		
 		<?php
 
@@ -34,12 +34,14 @@ $res = $mysqli->query($query) or die($mysqli->error);
 if($res->num_rows > 0) {
 	while($row = $res->fetch_object()) {
 		$content .= <<<END
-		Kundnamn: {$row->ArticleNumber}<br>
+		Kundnamn: {$row->CustomerName}<br>
 		Fakturanummer: {$row->DocumentNumber}<br>
-		Beställningsdatum: {$row->Description}<br>
-		Leveransdatum: {$row->Description}<br>
-		Beställningsdatum: {$row->Description}<br>
-		Pris: {$row->SalesPrice}<br>
+		Beställningsdatum: {$row->OrderDate}<br>
+		Leveransdatum: {$row->DeliveryDate}<br>
+		Totalt: {$row->Total}<br>
+        Utleveransarea: {$row->utlevarea}<br>
+        Hämtad: {$row->hamtad}<br>
+        <a href="edit_gods.php?DocumentNumber={$row->DocumentNumber}">Redigera order</a>
 		<hr>
 END;
 	}
