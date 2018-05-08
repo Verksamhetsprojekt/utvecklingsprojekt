@@ -4,10 +4,10 @@ $navigation = <<<END
   <ul class="navbar-nav">
   <a class="navbar-brand" href="#">Logo</a>
     <li class="nav-item">
-      <a class="nav-link" href="index.php">Home</a>
+      <a class="nav-link" href="index.php">Hem</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="about.php">About</a>
+      <a class="nav-link" href="about.php">Om oss</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="articles.php">Artiklar</a>
@@ -36,10 +36,10 @@ if(isset($_SESSION['userId']))
     </li>';
  $navigation .= '
     <li class="nav-item">
-    <a class="nav-link" href="gods.php">Se kundordrar</a>
+    <a class="nav-link" href="gods.php">Kundordrar</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="fakturor.php">Se leverantörsfakturor</a>
+    <a class="nav-link" href="fakturor.php">Leverantörsfakturor</a>
     </li>';
    $navigation .= '
   

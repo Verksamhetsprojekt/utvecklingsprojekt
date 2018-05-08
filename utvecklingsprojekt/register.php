@@ -65,7 +65,8 @@ $content = <<<END
         pattern="[A-Za-z]{1,15}"
         title="Efternamn krävs, endast bokstäver och inga andra tecken. Namnet får inte bestå av mer än 15 bokstäver. Inga ÅÄÖ">
         
-<input type="submit" value="Registrera"></input>
+<input type="submit" value="Registrera"></th>
+          </tr></input>
 </form>
 
 
