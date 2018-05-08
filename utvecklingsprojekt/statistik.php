@@ -50,7 +50,7 @@
 
         ]); */
 
-
+<?php
           if($mysqli){
 $query = <<<END
 SELECT DueDate, Total FROM supplierinvoices

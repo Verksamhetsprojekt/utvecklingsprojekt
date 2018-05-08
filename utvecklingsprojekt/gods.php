@@ -24,7 +24,14 @@ header("refresh:0;url=login.php");
 exit;
 
 }
+?>
 
+<form method="GET" action="searchGods.php">
+      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="submit" name="Submit" placeholder="Submit">
+    </form>
+
+<?php
 $order = json_decode(apiCall('GET', 'orders'), true);
 
 //var_dump($order);
@@ -74,6 +81,7 @@ if($res->num_rows > 0)
 	<table class="table">
 	<tr>
 	    <th>Kundnamn</th>
+	    <th>Fakturanummer</th>
 	    <th>Beställningsdatum</th>
 	    <th>Leveransdatum</th>
 	    <th>Totalt</th>
@@ -90,6 +98,7 @@ $content .= <<<END
 <tr>
 	   
          <td>{$row->CustomerName}</td>
+         <td>{$row->DocumentNumber}</td>
          <td>{$row->OrderDate}</td>
          <td>{$row->DeliveryDate}</td>
          <td>{$row->Total}</td>

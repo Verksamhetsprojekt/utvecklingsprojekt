@@ -15,6 +15,10 @@
 	<body class="body">
 		<div class="container text-center">
 
+<form method="GET" action="searchArticle.php">
+      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="submit" name="Submit" placeholder="Submit">
+    </form>
 
 
 			<?php
@@ -81,13 +85,6 @@ SELECT * FROM article
 ORDER BY ArticleNumber ASC
 END;
 
-//sökfuntion här fungerar ej
-$content .= <<<END
-<form action="articles.php" method="GET">
-<input id="search" name="ArticleNumber" type="text" placeholder="Sök här...">
-<input id="submit" type="submit" value="Sök">
-</form>
-END;
 
 
 $res = $mysqli->query($query);

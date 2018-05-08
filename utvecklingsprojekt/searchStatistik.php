@@ -15,7 +15,7 @@
 
 
 		<a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-		<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
+		<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
 		<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr>
 
 
@@ -63,16 +63,16 @@ if(!isset($_GET['Search'])) {
 
 
 $query= <<<END
-SELECT * FROM article WHERE Description LIKE '%{$_GET['Search']}%'
+SELECT * FROM article WHERE Description LIKE '%{$_GET['Search']}%' OR ArticleNumber LIKE '%{$_GET['Search']}%'
 END;
 
 $res = $mysqli->query($query) or die($mysqli->error);
 if($res->num_rows > 0) {
 	while($row = $res->fetch_object()) {
 		$content .= <<<END
-		{$row->ArticleNumber}<br>
-		{$row->Description}<br>
-		{$row->QuantityInStock}
+		Artikelnummer: {$row->ArticleNumber}<br>
+		Beskrivning: {$row->Description}<br>
+		Antal i lager: {$row->QuantityInStock}
 		<hr>
 END;
 	}
