@@ -10,6 +10,7 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
+			<a href="articles.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 			if(isset($_GET['ArticleNumber'])&&(isset($_SESSION['userId'])))
 {
