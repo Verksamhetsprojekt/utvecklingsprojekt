@@ -9,6 +9,7 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
+			<a href="articles.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 
 			include('config.php');
@@ -17,7 +18,9 @@
 {
 	echo $_GET["ArticleNumber"];
 	echo apiCall('DELETE', 'articles/'.$_GET["ArticleNumber"].'');
-
+?>
+<br>
+<?php
 	$query = <<<END
 	DELETE FROM article
 	WHERE ArticleNumber = '{$_GET["ArticleNumber"]}'

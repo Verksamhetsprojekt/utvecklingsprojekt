@@ -10,7 +10,7 @@
 
 	<body>
 	<div class="container text-center">
-      <h2>Statistik</h2><br>
+      <h2>Sökresultat</h2><br>
       <h4><i>Antal artiklar i lager</i></h4>
 
 

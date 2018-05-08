@@ -9,6 +9,7 @@
 
 <body>
 	<div class="container text-center">
+		<a href="gods.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 include('config.php');
 
