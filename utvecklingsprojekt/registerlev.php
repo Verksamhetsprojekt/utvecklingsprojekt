@@ -30,7 +30,7 @@ $content = <<<END
         name="levname" required
         placeholder="Användarnamn"
         pattern="[a-z]{1,10}"
-        title="Användarnamnet ska endast bestå av små bokstäver och högst 10 tecken sammanlagt. Inga ÅÄÖ. exempelvis: john123">
+        title="Användarnamnet ska endast bestå av små bokstäver och högst 10 tecken sammanlagt. Inga ÅÄÖ. exempelvis: john">
   <input
   type="text"
         name="password" required
