@@ -13,9 +13,9 @@
 
 			<?php
 			$content = <<<END
-<form action="login.php" method="post">
+<br><form action="login.php" method="post">
 <input type="text" name="username" placeholder="username"><br>
-<input type="password" name="password" placeholder="password"><br>
+<input type="password" name="password" placeholder="password"><br><br>
 <input type="submit" value="Logga in">
 </form>
 END;

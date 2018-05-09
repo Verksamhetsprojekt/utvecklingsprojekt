@@ -9,7 +9,9 @@
 
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
-		<div class="container text-center">
+		<div class="container">
+		<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
 			<a href="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 			if(isset($_GET['GivenNumber'])&&(isset($_SESSION['userId'])))
@@ -41,6 +43,8 @@ END;
 			echo $content;
 			?>
 		</div>
+	</div>
+</div>
 	</body>
 <!-- Här slutar Body-->
 

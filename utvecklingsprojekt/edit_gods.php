@@ -8,7 +8,9 @@
 	?>
 
 <body>
-	<div class="container text-center">
+	<div class="container">
+		<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
 		<a href="gods.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 include('config.php');
@@ -21,7 +23,7 @@ include('config.php');
 if(isset($_GET['DocumentNumber'])&&isset($_SESSION['userId']))
 {
 
-echo "Artikelnummer: ";
+echo "Fakturanummer: ";
 echo $_GET["DocumentNumber"];
 
 	if(isset($_POST['utlevarea']))
@@ -51,8 +53,8 @@ if($res->num_rows > 0)
 $row = $res->fetch_object();
 $content = <<<END
 <form method="post" action="edit_gods.php?DocumentNumber={$row->DocumentNumber}">
-<hr>Utlev.area: <input type="text" name="utlevarea" value="{$row->utlevarea}" placeholder="Ja/Nej"></hr>
-<hr>Hämtad: <input type="text" name="hamtad" value="{$row->hamtad}" placeholder="Ja/Nej"></hr>
+<hr>Utleveransarea: <br><input type="text" name="utlevarea" value="{$row->utlevarea}" placeholder="Ja/Nej"></hr>
+<hr>Hämtad: <br><input type="text" name="hamtad" value="{$row->hamtad}" placeholder="Ja/Nej"></hr>
 <hr><input type="submit" value="Spara"></hr> 
 </form>
 END;
@@ -65,6 +67,8 @@ END;
 echo $content;
 ?>
 </div>
+</div>
+</div>	
 </body>
 
 <footer class="footer container-fluid text-center bg-light">
