@@ -10,7 +10,7 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
-			<a hre§f="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
+			<a href="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
 			if(isset($_GET['SupplierNumber'])&&(isset($_SESSION['userId'])))
 {

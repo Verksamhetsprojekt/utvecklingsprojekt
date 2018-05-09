@@ -35,8 +35,8 @@ $res = $mysqli->query($query);
 }
 $content = <<<END
 <form action="loginlev.php" method="post">
-<input type="text" name="levname" placeholder="username">
-<input type="password" name="password" placeholder="password">
+<input type="text" name="levname" placeholder="username"><br>
+<input type="password" name="password" placeholder="password"><br>
 <input type="submit" value="Logga in">
 </form>
 END;

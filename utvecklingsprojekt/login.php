@@ -10,10 +10,20 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
+
 			<?php
+			$content = <<<END
+<form action="login.php" method="post">
+<input type="text" name="username" placeholder="username"><br>
+<input type="password" name="password" placeholder="password"><br>
+<input type="submit" value="Logga in">
+</form>
+END;
 			// databasen har en tabell "users" med värdena "id", "username", och "password"
 if(isset($_POST['username']))
 {
+
+
 	$query = <<<END
 	SELECT username, password, id FROM users
 	WHERE username = '{$_POST['username']}'
@@ -32,13 +42,7 @@ $res = $mysqli->query($query);
 		echo '<span style="color:Red">Fel användarnamn eller lösenord.</span>';
 	}
 }
-$content = <<<END
-<form action="login.php" method="post">
-<input type="text" name="username" placeholder="username">
-<input type="password" name="password" placeholder="password">
-<input type="submit" value="Logga in">
-</form>
-END;
+
 			echo $content;
 			?>
 		</div>
