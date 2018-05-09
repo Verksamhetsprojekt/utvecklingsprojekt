@@ -54,6 +54,8 @@ $products = json_decode(apiCall('GET', 'articles'), true);
 
 if(count($products) > 0)
 {
+
+	
 	$query = <<<END
 	UPDATE article
     SET ArticleNumber = null, Description = null, DisposableQuantity = null, EAN = null, Housework = null, PurchasePrice = null, SalesPrice = null, QuantityInStock = null, ReservedQuantity = null, StockPlace = null, StockValue = null, Unit = null, VAT = null, WebShopArticle = null

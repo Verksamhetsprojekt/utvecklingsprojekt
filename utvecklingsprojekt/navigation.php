@@ -9,9 +9,7 @@ $navigation = <<<END
     <li class="nav-item">
       <a class="nav-link" href="about.php">Om oss</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="articles.php">Artiklar</a>
-    </li>
+    
   
 
 
@@ -19,6 +17,12 @@ END;
 
 if(isset($_SESSION['userId']))
 {
+
+$navigation .= '
+  <li class="nav-item">
+      <a class="nav-link" href="articles.php">Artiklar</a>
+    </li>';
+
 	$navigation .= '
   
     <li class="nav-item">
