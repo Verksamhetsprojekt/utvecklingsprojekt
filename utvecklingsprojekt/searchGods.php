@@ -9,7 +9,9 @@
 	?>
 
 	<body>
-	<div class="container text-center">
+	<div class="container">
+		<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
       <h2>Sökresultat</h2><br>
 		<a href="gods.php" class="btn btn-default">Tillbaka</a><hr>
 		
@@ -68,6 +70,8 @@ END;
     		
 			echo $content;
 			?>
+</div>
+</div>
 </div>
 </body>
 <footer class="footer container-fluid text-center bg-light">

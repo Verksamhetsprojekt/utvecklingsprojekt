@@ -9,7 +9,9 @@
 	?>
 
 	<body>
-	<div class="container text-center">
+	<div class="container">
+		<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
       <h2>Sökresultat</h2><br>
 		<a href="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
 		
@@ -34,6 +36,7 @@ if($res->num_rows > 0) {
 		Beställningsdatum: {$row->InvoiceDate}<br>
 		Leveransdatum: {$row->DueDate}<br>
 		Betaldatum: <small><i>(0000-00-00 = OBETALD)</i></small> {$row->PaidInFull}<br>
+		<a href="fakturaspec.php?GivenNumber={$row->GivenNumber}">Läs mer</a>
 		<hr>
 END;
 	}
@@ -67,6 +70,8 @@ exit;
     		
 			echo $content;
 			?>
+</div>
+</div>
 </div>
 </body>
 <footer class="footer container-fluid text-center bg-light">

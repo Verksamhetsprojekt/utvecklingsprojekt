@@ -12,11 +12,11 @@
 		<div class="container text-center">
 			<a href="fakturor.php" class="btn btn-default">Tillbaka</a><hr>
 			<?php
-			if(isset($_GET['SupplierNumber'])&&(isset($_SESSION['userId'])))
+			if(isset($_GET['GivenNumber'])&&(isset($_SESSION['userId'])))
 {
 	$query = <<<END
 	SELECT * FROM supplierinvoices
-	WHERE SupplierNumber = '{$_GET["SupplierNumber"]}'
+	WHERE GivenNumber = '{$_GET["GivenNumber"]}'
 END;
 
 $res = $mysqli->query($query);

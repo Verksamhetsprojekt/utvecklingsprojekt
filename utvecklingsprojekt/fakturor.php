@@ -11,7 +11,8 @@
 		<div class="container text-center">
 
 			<form method="GET" action="searchFakturor.php">
-      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="text" name="Search" pattern="([A-Öa-ö0-9]+){1,32}"
+        title="Sök på Leverantör eller fakturanummer, endast vanliga bokstäver och siffror, och sökningen får inte bestå av mer än 32 tecken." placeholder="Sök här...">
       <input  type="submit" name="Submit" placeholder="Submit">
     </form>
 			<?php
@@ -88,7 +89,7 @@ END;
 
 if(isset($_SESSION['userId'])) {
 	$content .= <<<END
-	 <th><a href="fakturaspec.php?SupplierNumber={$row->SupplierNumber}">Läs mer</a></th>
+	 <th><a href="fakturaspec.php?GivenNumber={$row->GivenNumber}">Läs mer</a></th>
 	 </tr> 
 
 

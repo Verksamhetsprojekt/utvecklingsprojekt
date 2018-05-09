@@ -14,17 +14,19 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body class="body">
 		<div class="container text-center">
-
+<br><a class="btn btn-primary" href="add_article.php">Lägg till artikel</a><hr>
 <form method="GET" action="searchArticle.php">
-      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="text" name="Search" pattern="([A-Öa-ö0-9]+){1,32}"
+        title="Sök på benämning eller artikelnummer, endast vanliga bokstäver och siffror, och sökningen får inte bestå av mer än 32 tecken." placeholder="Sök här...">
       <input  type="submit" name="Submit" placeholder="Submit">
-    </form>
+    </form><br>
+
 
 
 			<?php
 
 
-
+if(isset($_SESSION['userId'])||(isset($_SESSION['levId'])))	{
 
 
 /*if(isset($_GET['search'])) {
@@ -146,6 +148,14 @@ END;
   $content .= '</table>';
  $content .= '<hr>';
 
+}else {
+	
+header("refresh:0;url=login.php");
+
+ echo '<script type="text/javascript">alert("Du har inte behörighet, vänligen logga in");</script>';
+
+exit;
+}
 			echo $content;
 
 			?>

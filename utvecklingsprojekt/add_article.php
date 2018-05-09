@@ -47,7 +47,7 @@ $mysqli->query($query);
 
 
 
-$content = <<<END
+$content = '
 <form method="post" action="add_article.php">
 <input 
 type="text"
@@ -73,8 +73,7 @@ type="text"
 
         
 <input type="submit" Value="Lägg till artikel">
-</form>
-END;
+</form>';
 
 if(!isset($_SESSION['userId'])) {
 	

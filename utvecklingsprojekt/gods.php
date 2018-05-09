@@ -27,7 +27,8 @@ exit;
 ?>
 
 <form method="GET" action="searchGods.php">
-      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="text" name="Search" pattern="([A-Öa-ö0-9]+){1,32}"
+        title="Sök på Kundnamn eller fakturanummer, endast vanliga bokstäver och siffror, och sökningen får inte bestå av mer än 32 tecken." placeholder="Sök här...">
       <input  type="submit" name="Submit" placeholder="Submit">
     </form>
 

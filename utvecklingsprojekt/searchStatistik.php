@@ -9,14 +9,19 @@
 	?>
 
 	<body>
-	<div class="container text-center">
-      <h2>Sökresultat</h2><br>
+	<div class="container">
+		<div style="text-align: center;">
+			<h2>Sökresultat</h2><br>
       <h4><i>Antal artiklar i lager</i></h4>
-
-
-		<a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
+      <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
 		<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
-		<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr>
+		<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><br><br>
+		<a href="statistik3.php" class="btn btn-default">Tillbaka</a><hr>
+    <div style="display: inline-block; text-align: left;">
+      
+
+
+		
 
 
 		<?php
@@ -73,6 +78,8 @@ exit;
     		
 			echo $content;
 			?>
+</div>
+</div>
 </div>
 </body>
 <footer class="footer container-fluid text-center bg-light">

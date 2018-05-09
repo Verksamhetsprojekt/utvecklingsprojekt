@@ -21,6 +21,8 @@ include('config.php');
 if(isset($_GET['DocumentNumber'])&&isset($_SESSION['userId']))
 {
 
+echo "Artikelnummer: ";
+echo $_GET["DocumentNumber"];
 
 	if(isset($_POST['utlevarea']))
 	{
@@ -31,6 +33,7 @@ if(isset($_GET['DocumentNumber'])&&isset($_SESSION['userId']))
 		hamtad = '{$_POST["hamtad"]}'
 		WHERE DocumentNumber = '{$_GET["DocumentNumber"]}'
 END;
+
 echo '<span style="color:Green">Ändringarna har lagts till</span>';
 }
 

@@ -21,7 +21,8 @@
 <!-- Sökruta -->
 
 <form method="GET" action="searchStatistik.php">
-      <input  type="text" name="Search" placeholder="Sök här...">
+      <input  type="text" name="Search" pattern="([A-Öa-ö0-9]+){1,32}"
+        title="Sök på artikelnamn eller artikelnummer, endast vanliga bokstäver och siffror, och sökningen får inte bestå av mer än 32 tecken." placeholder="Sök här...">
       <input  type="submit" name="Submit" placeholder="Submit">
     </form>
 

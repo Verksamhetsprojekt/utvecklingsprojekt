@@ -1,8 +1,8 @@
 <?php
 $navigation = <<<END
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-center">
   <ul class="navbar-nav">
-  <a class="navbar-brand" href="#">Logo</a>
+  <a class="navbar-brand" href="#"><img src="https://preview.ibb.co/nceTuS/32169639_10155946711364024_7519437869195198464_n.jpg" alt="32169639_10155946711364024_7519437869195198464_n" border="0" height="40" width="40">HFAB</a>
     <li class="nav-item">
       <a class="nav-link" href="index.php">Hem</a>
     </li>
@@ -23,11 +23,7 @@ $navigation .= '
       <a class="nav-link" href="articles.php">Artiklar</a>
     </li>';
 
-	$navigation .= '
-  
-    <li class="nav-item">
-      <a class="nav-link" href="add_article.php">Lägg till artikel</a>
-    </li>';
+
   $navigation .= '
 
   
@@ -59,7 +55,7 @@ else if(isset($_SESSION['levId']))
   
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Se statistik</a>
+        Statistik</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="statistik.php">Försäljning över tid</a>
         <a class="dropdown-item" href="statistik2.php">Försäljning och totala leveranser per leverantör</a>
@@ -69,7 +65,7 @@ else if(isset($_SESSION['levId']))
   $navigation .= '
 
   <li class="nav-item">
-    <a class="nav-link" href="fakturor.php">Se fakturor</a>
+    <a class="nav-link" href="fakturor.php">Fakturor</a>
     </li>';
   
   $navigation .= '
