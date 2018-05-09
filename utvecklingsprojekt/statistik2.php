@@ -10,13 +10,13 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
   <body>
     <div class="container text-center">
-      <h2>Statistik</h2><br>
-      <h4><i>Försäljning och totala leveranser per leverantör</i></h4>
+      <h3>Statistik</h3><br>
+      <h5><i>Försäljning per leverantör</i></h5>
       
 <!-- Nedanför är kod för Google Charts-API-->
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
+<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
 <a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr>
     <button onclick="drawChart('ColumnChart')" class="btn btn-default">Column chart</button>
 <button onclick="drawChart('PieChart')" class="btn btn-default">Pie Chart</button>

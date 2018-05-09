@@ -10,21 +10,21 @@
 <!-- Här börjar Body - här lägger du in kod som ska visas i $content -->
 	<body>
 		<div class="container text-center">
-      <h2>Statistik</h2><br>
-      <h4><i>Antal artiklar i lager</i></h4>
+      <h3>Statistik</h3><br>
+      <h5><i>Antal artiklar i lager</i></h5>
 
 
 <a href="statistik.php" class="btn btn-primary">Försäljning över tid</a>
-<a href="statistik2.php" class="btn btn-primary">Försäljning och totala leveranser per leverantör</a>
-<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><hr>
+<a href="statistik2.php" class="btn btn-primary">Försäljning per leverantör</a>
+<a href="statistik3.php" class="btn btn-primary">Antal artiklar i lager</a><br>
 
 <!-- Sökruta -->
 
-<form method="GET" action="searchStatistik.php">
+<br><form method="GET" action="searchStatistik.php">
       <input  type="text" name="Search" pattern="([A-Öa-ö0-9]+){1,32}"
         title="Sök på artikelnamn eller artikelnummer, endast vanliga bokstäver och siffror, och sökningen får inte bestå av mer än 32 tecken." placeholder="Sök här...">
       <input  type="submit" name="Submit" placeholder="Submit">
-    </form>
+    </form><br>
 
 <!-- Sökruta -->
 
