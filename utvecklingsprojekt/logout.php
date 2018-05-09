@@ -1,11 +1,12 @@
+<!doctype html>
+<html>
 <?php
 
-$content = <<<END
-<h1>Du är nu utloggad. Hejdå!</h1>
+/*<h1>Du är nu utloggad. Hejdå!</h1>
 <p>Ses nästa gång :)</p>
-END;
+END;*/
 
-
+include('connection.php');
 
 $_SESSION = array();
 session_destroy();
@@ -14,8 +15,9 @@ session_destroy();
 header("refresh:0;url=index.php");
  echo '<script type="text/javascript">alert("Du loggas nu ut, välkommen åter");</script>';
 
+
   
-echo $content;
+
 ?>
 
-
+</html>
