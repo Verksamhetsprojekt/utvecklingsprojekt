@@ -40,7 +40,7 @@ $res = $mysqli->query($query);
 if($res->num_rows > 0)
 {
       $content .= <<<END
-  <table class="table">
+  <table class="table table-bordered">
   <tr>
       <th>Artikelnummer</th>
       <th>Artikelnamn</th>

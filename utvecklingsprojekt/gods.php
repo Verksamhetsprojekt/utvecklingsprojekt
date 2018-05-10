@@ -82,7 +82,7 @@ if($res->num_rows > 0)
 {
 	$content .= <<<END
 
-	<table class="table">
+	<table class="table table-bordered">
 	<tr>
 	    <th>Kundnamn</th>
 	    <th>Fakturanummer</th>

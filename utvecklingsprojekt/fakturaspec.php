@@ -34,7 +34,7 @@ if($res->num_rows > 0)
 	Förfallodatum: {$row->DueDate}<br>
 	Totalt: {$row->Total}<br>
 	Valuta: {$row->Currency}<br>
-	Betalt den: {$row->PaidInFull}<br>
+	Betaldatum <small><i>(0000-00-00 = OBETALD)</i></small>: {$row->PaidInFull}<br>
 	Bokfört: {$row->Booked}
 	</form>
 END;

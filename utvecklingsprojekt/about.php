@@ -23,7 +23,7 @@
 <p>HFABs vision är att vara en ledande aktör inom komponenttillverkning till fordonsindustrin. Genom en tydlig fokusering på kundnytta, utvecklingsmöjligheter och konkurrenskraftiga lösningar. De tre senaste åren har ett omfattande investeringsprogram genomförts, framför allt gällande automatiserad produktionsutrustning, tjänsteutveckling och lagerhantering. Detta ska resultera i effektiva, flexibla och moderna tjänster samt strömlinjeformade produktions- och distribueringskedjor.</p>
 <hr>
 				<h4>Kontakta oss</h4>
-				<table class="table-bordered active">
+				<table class="table table-bordered">
 				<tr>
 				<th>Telefonnummer:</th>
 				<th>Email:</th>
@@ -33,7 +33,7 @@
 				<td>035 935941315</td>
 				<td>info@hfab.se</td>
 				<td>Skogsmullevägen 13, 423 64 Västervik</td>
-				</table>
+				</table><br><br>
 			
 
 END;

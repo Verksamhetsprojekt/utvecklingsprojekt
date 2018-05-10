@@ -35,7 +35,7 @@ if($res->num_rows > 0) {
 		Totalsumma: {$row->Total}<br>
 		Beställningsdatum: {$row->InvoiceDate}<br>
 		Leveransdatum: {$row->DueDate}<br>
-		Betaldatum: <small><i>(0000-00-00 = OBETALD)</i></small> {$row->PaidInFull}<br>
+		Betaldatum <small><i>(0000-00-00 = OBETALD)</i></small>:  {$row->PaidInFull}<br>
 		<a href="fakturaspec.php?GivenNumber={$row->GivenNumber}">Läs mer</a>
 		<hr>
 END;
