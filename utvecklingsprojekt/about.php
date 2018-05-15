@@ -33,7 +33,7 @@
 				<td>035 935941315</td>
 				<td>info@hfab.se</td>
 				<td>Skogsmullevägen 13, 423 64 Västervik</td>
-				</table><br><br>
+				</table><br>
 			
 
 END;

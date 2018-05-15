@@ -67,6 +67,7 @@ END;
 </div>
 </div>
 </div>
+<br>
 </body>
 <footer class="footer container-fluid text-center bg-light">
 		<?php

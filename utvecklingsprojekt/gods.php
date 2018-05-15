@@ -124,6 +124,7 @@ echo $content;
 
 
 			?>
+			<br>
 		</div>
 	</body>
 <!-- Här slutar Body-->

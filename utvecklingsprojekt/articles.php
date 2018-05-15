@@ -146,7 +146,7 @@ END;
 
 }
   $content .= '</table>';
- $content .= '<hr>';
+
 
 }else {
 	
@@ -159,6 +159,8 @@ exit;
 			echo $content;
 
 			?>
+			<br>
+			
 		</div>
 	</body>
 <!-- Här slutar Body-->
